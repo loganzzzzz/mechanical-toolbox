@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026.11.05.1",
+  "updatedOn": "2026-11-05",
+  "title": "普通平键与键槽 · 常用轴径推荐 6—500 mm",
+  "standard": "GB/T 1095-2003",
+  "sizeSourceId": "gb1095",
+  "shaftSelectionSourceId": "jlc-handbook",
+  "sources": [
+    {
+      "id": "gb1095",
+      "title": "GB/T 1095-2003 · 平键 键槽的剖面尺寸",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=1F90F0327081018E769B4DC30FE7E7AA",
+      "scope": "键截面对应的槽宽、槽深、槽底半径及三种联结的槽宽公差，按表 1 原表核对。标准未规定轴径分档；查询中的轴径选键为常用设计推荐。"
+    },
+    {
+      "id": "gb1095-table",
+      "title": "GB/T 1095-2003 · 核对用表 1",
+      "url": "https://img.antpedia.com/standard/files/pdfs_ora/CN-GB/783/GB_T%201095-2003.pdf",
+      "scope": "核对原表的 26 档截面、N9 / JS9 / P9 / H9 / D10 槽宽极限偏差、槽深和圆角。数值以毫米存储，保留四位小数。"
+    },
+    {
+      "id": "jlc-handbook",
+      "title": "嘉立创 FA 机械设计手册 · 平键键槽尺寸与公差",
+      "url": "https://www.jlcfa.com/mcbook/new05228.htm",
+      "scope": "按常用机械设计手册的轴径分档推荐键截面，首档含 6 和 8，其余区间不含下限、含上限。轴径推荐不替代连接强度、轮毂结构和键长设计。"
+    }
+  ],
+  "sizes": [
+    {
+      "shaftMin": 6,
+      "shaftMax": 8,
+      "width": 2,
+      "height": 2,
+      "shaftDepth": 1.2,
+      "hubDepth": 1,
+      "depthUpper": 0.1,
+      "radiusMin": 0.08,
+      "radiusMax": 0.16,
+      "n9": {
+        "lower": -0.029,
+        "upper": -0.004
+      },
+      "js9": {
+        "lower": -0.0125,
+        "upper": 0.0125
+      },
+      "p9": {
+        "lower": -0.031,
+        "upper": -0.006
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.025
+      },
+      "d10": {
+        "lower": 0.02,
+        "upper": 0.06
+      }
+    },
+    {
+      "shaftMin": 8,
+      "shaftMax": 10,
+      "width": 3,
+      "height": 3,
+      "shaftDepth": 1.8,
+      "hubDepth": 1.4,
+      "depthUpper": 0.1,
+      "radiusMin": 0.08,
+      "radiusMax": 0.16,
+      "n9": {
+        "lower": -0.029,
+        "upper": -0.004
+      },
+      "js9": {
+        "lower": -0.0125,
+        "upper": 0.0125
+      },
+      "p9": {
+        "lower": -0.031,
+        "upper": -0.006
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.025
+      },
+      "d10": {
+        "lower": 0.02,
+        "upper": 0.06
+      }
+    },
+    {
+      "shaftMin": 10,
+      "shaftMax": 12,
+      "width": 4,
+      "height": 4,
+      "shaftDepth": 2.5,
+      "hubDepth": 1.8,
+      "depthUpper": 0.1,
+      "radiusMin": 0.08,
+      "radiusMax": 0.16,
+      "n9": {
+        "lower": -0.03,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.015,
+        "upper": 0.015
+      },
+      "p9": {
+        "lower": -0.042,
+        "upper": -0.012
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.03
+      },
+      "d10": {
+        "lower": 0.03,
+        "upper": 0.078
+      }
+    },
+    {
+      "shaftMin": 12,
+      "shaftMax": 17,
+      "width": 5,
+      "height": 5,
+      "shaftDepth": 3,
+      "hubDepth": 2.3,
+      "depthUpper": 0.1,
+      "radiusMin": 0.16,
+      "radiusMax": 0.25,
+      "n9": {
+        "lower": -0.03,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.015,
+        "upper": 0.015
+      },
+      "p9": {
+        "lower": -0.042,
+        "upper": -0.012
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.03
+      },
+      "d10": {
+        "lower": 0.03,
+        "upper": 0.078
+      }
+    },
+    {
+      "shaftMin": 17,
+      "shaftMax": 22,
+      "width": 6,
+      "height": 6,
+      "shaftDepth": 3.5,
+      "hubDepth": 2.8,
+      "depthUpper": 0.1,
+      "radiusMin": 0.16,
+      "radiusMax": 0.25,
+      "n9": {
+        "lower": -0.03,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.015,
+        "upper": 0.015
+      },
+      "p9": {
+        "lower": -0.042,
+        "upper": -0.012
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.03
+      },
+      "d10": {
+        "lower": 0.03,
+        "upper": 0.078
+      }
+    },
+    {
+      "shaftMin": 22,
+      "shaftMax": 30,
+      "width": 8,
+      "height": 7,
+      "shaftDepth": 4,
+      "hubDepth": 3.3,
+      "depthUpper": 0.2,
+      "radiusMin": 0.25,
+      "radiusMax": 0.4,
+      "n9": {
+        "lower": -0.036,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.018,
+        "upper": 0.018
+      },
+      "p9": {
+        "lower": -0.051,
+        "upper": -0.015
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.036
+      },
+      "d10": {
+        "lower": 0.04,
+        "upper": 0.098
+      }
+    },
+    {
+      "shaftMin": 30,
+      "shaftMax": 38,
+      "width": 10,
+      "height": 8,
+      "shaftDepth": 5,
+      "hubDepth": 3.3,
+      "depthUpper": 0.2,
+      "radiusMin": 0.25,
+      "radiusMax": 0.4,
+      "n9": {
+        "lower": -0.036,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.018,
+        "upper": 0.018
+      },
+      "p9": {
+        "lower": -0.051,
+        "upper": -0.015
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.036
+      },
+      "d10": {
+        "lower": 0.04,
+        "upper": 0.098
+      }
+    },
+    {
+      "shaftMin": 38,
+      "shaftMax": 44,
+      "width": 12,
+      "height": 8,
+      "shaftDepth": 5,
+      "hubDepth": 3.3,
+      "depthUpper": 0.2,
+      "radiusMin": 0.25,
+      "radiusMax": 0.4,
+      "n9": {
+        "lower": -0.043,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.0215,
+        "upper": 0.0215
+      },
+      "p9": {
+        "lower": -0.061,
+        "upper": -0.018
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.043
+      },
+      "d10": {
+        "lower": 0.05,
+        "upper": 0.12
+      }
+    },
+    {
+      "shaftMin": 44,
+      "shaftMax": 50,
+      "width": 14,
+      "height": 9,
+      "shaftDepth": 5.5,
+      "hubDepth": 3.8,
+      "depthUpper": 0.2,
+      "radiusMin": 0.25,
+      "radiusMax": 0.4,
+      "n9": {
+        "lower": -0.043,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.0215,
+        "upper": 0.0215
+      },
+      "p9": {
+        "lower": -0.061,
+        "upper": -0.018
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.043
+      },
+      "d10": {
+        "lower": 0.05,
+        "upper": 0.12
+      }
+    },
+    {
+      "shaftMin": 50,
+      "shaftMax": 58,
+      "width": 16,
+      "height": 10,
+      "shaftDepth": 6,
+      "hubDepth": 4.3,
+      "depthUpper": 0.2,
+      "radiusMin": 0.25,
+      "radiusMax": 0.4,
+      "n9": {
+        "lower": -0.043,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.0215,
+        "upper": 0.0215
+      },
+      "p9": {
+        "lower": -0.061,
+        "upper": -0.018
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.043
+      },
+      "d10": {
+        "lower": 0.05,
+        "upper": 0.12
+      }
+    },
+    {
+      "shaftMin": 58,
+      "shaftMax": 65,
+      "width": 18,
+      "height": 11,
+      "shaftDepth": 7,
+      "hubDepth": 4.4,
+      "depthUpper": 0.2,
+      "radiusMin": 0.25,
+      "radiusMax": 0.4,
+      "n9": {
+        "lower": -0.043,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.0215,
+        "upper": 0.0215
+      },
+      "p9": {
+        "lower": -0.061,
+        "upper": -0.018
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.043
+      },
+      "d10": {
+        "lower": 0.05,
+        "upper": 0.12
+      }
+    },
+    {
+      "shaftMin": 65,
+      "shaftMax": 75,
+      "width": 20,
+      "height": 12,
+      "shaftDepth": 7.5,
+      "hubDepth": 4.9,
+      "depthUpper": 0.2,
+      "radiusMin": 0.4,
+      "radiusMax": 0.6,
+      "n9": {
+        "lower": -0.052,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.026,
+        "upper": 0.026
+      },
+      "p9": {
+        "lower": -0.074,
+        "upper": -0.022
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.052
+      },
+      "d10": {
+        "lower": 0.065,
+        "upper": 0.149
+      }
+    },
+    {
+      "shaftMin": 75,
+      "shaftMax": 85,
+      "width": 22,
+      "height": 14,
+      "shaftDepth": 9,
+      "hubDepth": 5.4,
+      "depthUpper": 0.2,
+      "radiusMin": 0.4,
+      "radiusMax": 0.6,
+      "n9": {
+        "lower": -0.052,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.026,
+        "upper": 0.026
+      },
+      "p9": {
+        "lower": -0.074,
+        "upper": -0.022
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.052
+      },
+      "d10": {
+        "lower": 0.065,
+        "upper": 0.149
+      }
+    },
+    {
+      "shaftMin": 85,
+      "shaftMax": 95,
+      "width": 25,
+      "height": 14,
+      "shaftDepth": 9,
+      "hubDepth": 5.4,
+      "depthUpper": 0.2,
+      "radiusMin": 0.4,
+      "radiusMax": 0.6,
+      "n9": {
+        "lower": -0.052,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.026,
+        "upper": 0.026
+      },
+      "p9": {
+        "lower": -0.074,
+        "upper": -0.022
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.052
+      },
+      "d10": {
+        "lower": 0.065,
+        "upper": 0.149
+      }
+    },
+    {
+      "shaftMin": 95,
+      "shaftMax": 110,
+      "width": 28,
+      "height": 16,
+      "shaftDepth": 10,
+      "hubDepth": 6.4,
+      "depthUpper": 0.2,
+      "radiusMin": 0.4,
+      "radiusMax": 0.6,
+      "n9": {
+        "lower": -0.052,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.026,
+        "upper": 0.026
+      },
+      "p9": {
+        "lower": -0.074,
+        "upper": -0.022
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.052
+      },
+      "d10": {
+        "lower": 0.065,
+        "upper": 0.149
+      }
+    },
+    {
+      "shaftMin": 110,
+      "shaftMax": 130,
+      "width": 32,
+      "height": 18,
+      "shaftDepth": 11,
+      "hubDepth": 7.4,
+      "depthUpper": 0.3,
+      "radiusMin": 0.7,
+      "radiusMax": 1,
+      "n9": {
+        "lower": -0.062,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.031,
+        "upper": 0.031
+      },
+      "p9": {
+        "lower": -0.088,
+        "upper": -0.026
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.062
+      },
+      "d10": {
+        "lower": 0.08,
+        "upper": 0.18
+      }
+    },
+    {
+      "shaftMin": 130,
+      "shaftMax": 150,
+      "width": 36,
+      "height": 20,
+      "shaftDepth": 12,
+      "hubDepth": 8.4,
+      "depthUpper": 0.3,
+      "radiusMin": 0.7,
+      "radiusMax": 1,
+      "n9": {
+        "lower": -0.062,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.031,
+        "upper": 0.031
+      },
+      "p9": {
+        "lower": -0.088,
+        "upper": -0.026
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.062
+      },
+      "d10": {
+        "lower": 0.08,
+        "upper": 0.18
+      }
+    },
+    {
+      "shaftMin": 150,
+      "shaftMax": 170,
+      "width": 40,
+      "height": 22,
+      "shaftDepth": 13,
+      "hubDepth": 9.4,
+      "depthUpper": 0.3,
+      "radiusMin": 0.7,
+      "radiusMax": 1,
+      "n9": {
+        "lower": -0.062,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.031,
+        "upper": 0.031
+      },
+      "p9": {
+        "lower": -0.088,
+        "upper": -0.026
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.062
+      },
+      "d10": {
+        "lower": 0.08,
+        "upper": 0.18
+      }
+    },
+    {
+      "shaftMin": 170,
+      "shaftMax": 200,
+      "width": 45,
+      "height": 25,
+      "shaftDepth": 15,
+      "hubDepth": 10.4,
+      "depthUpper": 0.3,
+      "radiusMin": 0.7,
+      "radiusMax": 1,
+      "n9": {
+        "lower": -0.062,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.031,
+        "upper": 0.031
+      },
+      "p9": {
+        "lower": -0.088,
+        "upper": -0.026
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.062
+      },
+      "d10": {
+        "lower": 0.08,
+        "upper": 0.18
+      }
+    },
+    {
+      "shaftMin": 200,
+      "shaftMax": 230,
+      "width": 50,
+      "height": 28,
+      "shaftDepth": 17,
+      "hubDepth": 11.4,
+      "depthUpper": 0.3,
+      "radiusMin": 0.7,
+      "radiusMax": 1,
+      "n9": {
+        "lower": -0.062,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.031,
+        "upper": 0.031
+      },
+      "p9": {
+        "lower": -0.088,
+        "upper": -0.026
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.062
+      },
+      "d10": {
+        "lower": 0.08,
+        "upper": 0.18
+      }
+    },
+    {
+      "shaftMin": 230,
+      "shaftMax": 260,
+      "width": 56,
+      "height": 32,
+      "shaftDepth": 20,
+      "hubDepth": 12.4,
+      "depthUpper": 0.3,
+      "radiusMin": 1.2,
+      "radiusMax": 1.6,
+      "n9": {
+        "lower": -0.074,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.037,
+        "upper": 0.037
+      },
+      "p9": {
+        "lower": -0.106,
+        "upper": -0.032
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.074
+      },
+      "d10": {
+        "lower": 0.1,
+        "upper": 0.22
+      }
+    },
+    {
+      "shaftMin": 260,
+      "shaftMax": 290,
+      "width": 63,
+      "height": 32,
+      "shaftDepth": 20,
+      "hubDepth": 12.4,
+      "depthUpper": 0.3,
+      "radiusMin": 1.2,
+      "radiusMax": 1.6,
+      "n9": {
+        "lower": -0.074,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.037,
+        "upper": 0.037
+      },
+      "p9": {
+        "lower": -0.106,
+        "upper": -0.032
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.074
+      },
+      "d10": {
+        "lower": 0.1,
+        "upper": 0.22
+      }
+    },
+    {
+      "shaftMin": 290,
+      "shaftMax": 330,
+      "width": 70,
+      "height": 36,
+      "shaftDepth": 22,
+      "hubDepth": 14.4,
+      "depthUpper": 0.3,
+      "radiusMin": 1.2,
+      "radiusMax": 1.6,
+      "n9": {
+        "lower": -0.074,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.037,
+        "upper": 0.037
+      },
+      "p9": {
+        "lower": -0.106,
+        "upper": -0.032
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.074
+      },
+      "d10": {
+        "lower": 0.1,
+        "upper": 0.22
+      }
+    },
+    {
+      "shaftMin": 330,
+      "shaftMax": 380,
+      "width": 80,
+      "height": 40,
+      "shaftDepth": 25,
+      "hubDepth": 15.4,
+      "depthUpper": 0.3,
+      "radiusMin": 2,
+      "radiusMax": 2.5,
+      "n9": {
+        "lower": -0.087,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.0435,
+        "upper": 0.0435
+      },
+      "p9": {
+        "lower": -0.124,
+        "upper": -0.037
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.087
+      },
+      "d10": {
+        "lower": 0.12,
+        "upper": 0.26
+      }
+    },
+    {
+      "shaftMin": 380,
+      "shaftMax": 440,
+      "width": 90,
+      "height": 45,
+      "shaftDepth": 28,
+      "hubDepth": 17.4,
+      "depthUpper": 0.3,
+      "radiusMin": 2,
+      "radiusMax": 2.5,
+      "n9": {
+        "lower": -0.087,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.0435,
+        "upper": 0.0435
+      },
+      "p9": {
+        "lower": -0.124,
+        "upper": -0.037
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.087
+      },
+      "d10": {
+        "lower": 0.12,
+        "upper": 0.26
+      }
+    },
+    {
+      "shaftMin": 440,
+      "shaftMax": 500,
+      "width": 100,
+      "height": 50,
+      "shaftDepth": 31,
+      "hubDepth": 19.5,
+      "depthUpper": 0.3,
+      "radiusMin": 2,
+      "radiusMax": 2.5,
+      "n9": {
+        "lower": -0.087,
+        "upper": 0
+      },
+      "js9": {
+        "lower": -0.0435,
+        "upper": 0.0435
+      },
+      "p9": {
+        "lower": -0.124,
+        "upper": -0.037
+      },
+      "h9": {
+        "lower": 0,
+        "upper": 0.087
+      },
+      "d10": {
+        "lower": 0.12,
+        "upper": 0.26
+      }
+    }
+  ]
+}

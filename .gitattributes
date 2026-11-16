@@ -1,0 +1,5 @@
+* text=auto
+*.png binary
+*.ico binary
+# Preserve upstream legal notices byte for byte.
+licenses/dotnet/*.txt -text -whitespace

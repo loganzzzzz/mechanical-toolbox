@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026.10.15.1",
+  "updatedOn": "2026-10-15",
+  "title": "公制普通粗牙 · 常用规格 M1.6—M36",
+  "threadSeries": "metric-coarse",
+  "clearanceSourceId": "iso273",
+  "tapSourceId": "guhring",
+  "sources": [
+    {
+      "id": "iso273",
+      "title": "ISO 273:1979",
+      "url": "https://www.iso.org/standard/4183.html",
+      "scope": "通孔精、中、粗三个系列的公称孔径，按标准第 2 页尺寸表核对。H12 / H13 / H14 为标准给出的参考公差带，数值偏差按 ISO 286-2:2010 表 1 以实际孔径分档，参考选用需按图样另行确定。"
+    },
+    {
+      "id": "guhring",
+      "title": "Gühring · Metric Tap Drill Sizes",
+      "url": "https://guhring.com/media/support/Tapping-Tap-Drill-Sizes-Metric.pdf",
+      "scope": "M3—M36 的螺距和常用切削底孔，参考第 234—237 页中的公制攻丝表选取常用钻径。表中存在多个可用钻径，本数据集为工艺推荐选值，非强制尺寸；M8 选 6.8，M12 选 10.2。"
+    },
+    {
+      "id": "guhring815",
+      "title": "Gühring · Series 815",
+      "url": "https://guhring.com/media/tools/815.pdf",
+      "scope": "M1.6、M1.8、M2、M2.5 的公制粗牙螺距与底孔范围，分别选用常用底孔 1.25、1.45、1.6、2.05 mm。其余收录螺距也与该资料的适用规格交叉核对。"
+    }
+  ],
+  "sizes": [
+    {
+      "diameter": 1.6,
+      "pitch": 0.35,
+      "tapDrill": 1.25,
+      "fine": 1.7,
+      "medium": 1.8,
+      "coarse": 2,
+      "tapSourceId": "guhring815"
+    },
+    {
+      "diameter": 1.8,
+      "pitch": 0.35,
+      "tapDrill": 1.45,
+      "fine": 2,
+      "medium": 2.1,
+      "coarse": 2.2,
+      "tapSourceId": "guhring815"
+    },
+    {
+      "diameter": 2,
+      "pitch": 0.4,
+      "tapDrill": 1.6,
+      "fine": 2.2,
+      "medium": 2.4,
+      "coarse": 2.6,
+      "tapSourceId": "guhring815"
+    },
+    {
+      "diameter": 2.5,
+      "pitch": 0.45,
+      "tapDrill": 2.05,
+      "fine": 2.7,
+      "medium": 2.9,
+      "coarse": 3.1,
+      "tapSourceId": "guhring815"
+    },
+    {
+      "diameter": 3,
+      "pitch": 0.5,
+      "tapDrill": 2.5,
+      "fine": 3.2,
+      "medium": 3.4,
+      "coarse": 3.6
+    },
+    {
+      "diameter": 3.5,
+      "pitch": 0.6,
+      "tapDrill": 2.9,
+      "fine": 3.7,
+      "medium": 3.9,
+      "coarse": 4.2
+    },
+    {
+      "diameter": 4,
+      "pitch": 0.7,
+      "tapDrill": 3.3,
+      "fine": 4.3,
+      "medium": 4.5,
+      "coarse": 4.8
+    },
+    {
+      "diameter": 5,
+      "pitch": 0.8,
+      "tapDrill": 4.2,
+      "fine": 5.3,
+      "medium": 5.5,
+      "coarse": 5.8
+    },
+    {
+      "diameter": 6,
+      "pitch": 1,
+      "tapDrill": 5,
+      "fine": 6.4,
+      "medium": 6.6,
+      "coarse": 7
+    },
+    {
+      "diameter": 7,
+      "pitch": 1,
+      "tapDrill": 6,
+      "fine": 7.4,
+      "medium": 7.6,
+      "coarse": 8
+    },
+    {
+      "diameter": 8,
+      "pitch": 1.25,
+      "tapDrill": 6.8,
+      "fine": 8.4,
+      "medium": 9,
+      "coarse": 10
+    },
+    {
+      "diameter": 10,
+      "pitch": 1.5,
+      "tapDrill": 8.5,
+      "fine": 10.5,
+      "medium": 11,
+      "coarse": 12
+    },
+    {
+      "diameter": 12,
+      "pitch": 1.75,
+      "tapDrill": 10.2,
+      "fine": 13,
+      "medium": 13.5,
+      "coarse": 14.5
+    },
+    {
+      "diameter": 14,
+      "pitch": 2,
+      "tapDrill": 12,
+      "fine": 15,
+      "medium": 15.5,
+      "coarse": 16.5
+    },
+    {
+      "diameter": 16,
+      "pitch": 2,
+      "tapDrill": 14,
+      "fine": 17,
+      "medium": 17.5,
+      "coarse": 18.5
+    },
+    {
+      "diameter": 18,
+      "pitch": 2.5,
+      "tapDrill": 15.5,
+      "fine": 19,
+      "medium": 20,
+      "coarse": 21
+    },
+    {
+      "diameter": 20,
+      "pitch": 2.5,
+      "tapDrill": 17.5,
+      "fine": 21,
+      "medium": 22,
+      "coarse": 24
+    },
+    {
+      "diameter": 22,
+      "pitch": 2.5,
+      "tapDrill": 19.5,
+      "fine": 23,
+      "medium": 24,
+      "coarse": 26
+    },
+    {
+      "diameter": 24,
+      "pitch": 3,
+      "tapDrill": 21,
+      "fine": 25,
+      "medium": 26,
+      "coarse": 28
+    },
+    {
+      "diameter": 27,
+      "pitch": 3,
+      "tapDrill": 24,
+      "fine": 28,
+      "medium": 30,
+      "coarse": 32
+    },
+    {
+      "diameter": 30,
+      "pitch": 3.5,
+      "tapDrill": 26.5,
+      "fine": 31,
+      "medium": 33,
+      "coarse": 35
+    },
+    {
+      "diameter": 33,
+      "pitch": 3.5,
+      "tapDrill": 29.5,
+      "fine": 34,
+      "medium": 36,
+      "coarse": 38
+    },
+    {
+      "diameter": 36,
+      "pitch": 4,
+      "tapDrill": 32,
+      "fine": 37,
+      "medium": 39,
+      "coarse": 42
+    }
+  ]
+}

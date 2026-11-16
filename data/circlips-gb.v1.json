@@ -1,0 +1,2806 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026.11.16.1",
+  "updatedOn": "2026-11-16",
+  "title": "轴用与孔用弹性挡圈 · 标准型 A 型",
+  "sources": [
+    {
+      "id": "gb894",
+      "title": "GB/T 894-2017 · 轴用弹性挡圈",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D817CED3A7E05397BE0A0AB82A",
+      "scope": "标准型 A 型，表 1 正文第 3～8 页；槽宽 H13，边距为表列最小值。轴用 40 mm 原表槽径与槽深矛盾，已标注待核对并屏蔽加工值。"
+    },
+    {
+      "id": "gb893",
+      "title": "GB/T 893-2017 · 孔用弹性挡圈",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D81B3BD3A7E05397BE0A0AB82A",
+      "scope": "标准型 A 型，表 1 正文第 3～6 页；槽宽 H13，边距为表列最小值。"
+    }
+  ],
+  "sizes": [
+    {
+      "kind": "shaft",
+      "diameter": 3.0,
+      "thickness": 0.4,
+      "freeDiameter": 2.7,
+      "grooveDiameter": 2.8,
+      "grooveWidth": 0.5,
+      "nominalDepth": 0.1,
+      "edgeMin": 0.3,
+      "grooveTolerance": {
+        "lower": -0.04,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 4.0,
+      "thickness": 0.4,
+      "freeDiameter": 3.7,
+      "grooveDiameter": 3.8,
+      "grooveWidth": 0.5,
+      "nominalDepth": 0.1,
+      "edgeMin": 0.3,
+      "grooveTolerance": {
+        "lower": -0.05,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 5.0,
+      "thickness": 0.6,
+      "freeDiameter": 4.7,
+      "grooveDiameter": 4.8,
+      "grooveWidth": 0.7,
+      "nominalDepth": 0.1,
+      "edgeMin": 0.3,
+      "grooveTolerance": {
+        "lower": -0.05,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 6.0,
+      "thickness": 0.7,
+      "freeDiameter": 5.6,
+      "grooveDiameter": 5.7,
+      "grooveWidth": 0.8,
+      "nominalDepth": 0.15,
+      "edgeMin": 0.5,
+      "grooveTolerance": {
+        "lower": -0.05,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 7.0,
+      "thickness": 0.8,
+      "freeDiameter": 6.5,
+      "grooveDiameter": 6.7,
+      "grooveWidth": 0.9,
+      "nominalDepth": 0.15,
+      "edgeMin": 0.5,
+      "grooveTolerance": {
+        "lower": -0.06,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 8.0,
+      "thickness": 0.8,
+      "freeDiameter": 7.4,
+      "grooveDiameter": 7.6,
+      "grooveWidth": 0.9,
+      "nominalDepth": 0.2,
+      "edgeMin": 0.6,
+      "grooveTolerance": {
+        "lower": -0.06,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 9.0,
+      "thickness": 1.0,
+      "freeDiameter": 8.4,
+      "grooveDiameter": 8.6,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.2,
+      "edgeMin": 0.6,
+      "grooveTolerance": {
+        "lower": -0.06,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 10.0,
+      "thickness": 1.0,
+      "freeDiameter": 9.3,
+      "grooveDiameter": 9.6,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.2,
+      "edgeMin": 0.6,
+      "grooveTolerance": {
+        "lower": -0.11,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 11.0,
+      "thickness": 1.0,
+      "freeDiameter": 10.2,
+      "grooveDiameter": 10.5,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.25,
+      "edgeMin": 0.8,
+      "grooveTolerance": {
+        "lower": -0.11,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 12.0,
+      "thickness": 1.0,
+      "freeDiameter": 11.0,
+      "grooveDiameter": 11.5,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.25,
+      "edgeMin": 0.8,
+      "grooveTolerance": {
+        "lower": -0.11,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 13.0,
+      "thickness": 1.0,
+      "freeDiameter": 11.9,
+      "grooveDiameter": 12.4,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.3,
+      "edgeMin": 0.9,
+      "grooveTolerance": {
+        "lower": -0.11,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 14.0,
+      "thickness": 1.0,
+      "freeDiameter": 12.9,
+      "grooveDiameter": 13.4,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.3,
+      "edgeMin": 0.9,
+      "grooveTolerance": {
+        "lower": -0.11,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 15.0,
+      "thickness": 1.0,
+      "freeDiameter": 13.8,
+      "grooveDiameter": 14.3,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.35,
+      "edgeMin": 1.1,
+      "grooveTolerance": {
+        "lower": -0.11,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 16.0,
+      "thickness": 1.0,
+      "freeDiameter": 14.7,
+      "grooveDiameter": 15.2,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.4,
+      "edgeMin": 1.2,
+      "grooveTolerance": {
+        "lower": -0.11,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 17.0,
+      "thickness": 1.0,
+      "freeDiameter": 15.7,
+      "grooveDiameter": 16.2,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.4,
+      "edgeMin": 1.2,
+      "grooveTolerance": {
+        "lower": -0.11,
+        "upper": 0
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 18.0,
+      "thickness": 1.2,
+      "freeDiameter": 16.5,
+      "grooveDiameter": 17.0,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.5,
+      "edgeMin": 1.5,
+      "grooveTolerance": {
+        "lower": -0.11,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 19.0,
+      "thickness": 1.2,
+      "freeDiameter": 17.5,
+      "grooveDiameter": 18.0,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.5,
+      "edgeMin": 1.5,
+      "grooveTolerance": {
+        "lower": -0.11,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 20.0,
+      "thickness": 1.2,
+      "freeDiameter": 18.5,
+      "grooveDiameter": 19.0,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.5,
+      "edgeMin": 1.5,
+      "grooveTolerance": {
+        "lower": -0.13,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 21.0,
+      "thickness": 1.2,
+      "freeDiameter": 19.5,
+      "grooveDiameter": 20.0,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.5,
+      "edgeMin": 1.5,
+      "grooveTolerance": {
+        "lower": -0.13,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 22.0,
+      "thickness": 1.2,
+      "freeDiameter": 20.5,
+      "grooveDiameter": 21.0,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.5,
+      "edgeMin": 1.5,
+      "grooveTolerance": {
+        "lower": -0.13,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 24.0,
+      "thickness": 1.2,
+      "freeDiameter": 22.2,
+      "grooveDiameter": 22.9,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.55,
+      "edgeMin": 1.7,
+      "grooveTolerance": {
+        "lower": -0.21,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 25.0,
+      "thickness": 1.2,
+      "freeDiameter": 23.2,
+      "grooveDiameter": 23.9,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.55,
+      "edgeMin": 1.7,
+      "grooveTolerance": {
+        "lower": -0.21,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 26.0,
+      "thickness": 1.2,
+      "freeDiameter": 24.2,
+      "grooveDiameter": 24.9,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.55,
+      "edgeMin": 1.7,
+      "grooveTolerance": {
+        "lower": -0.21,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 28.0,
+      "thickness": 1.5,
+      "freeDiameter": 25.9,
+      "grooveDiameter": 26.6,
+      "grooveWidth": 1.6,
+      "nominalDepth": 0.7,
+      "edgeMin": 2.1,
+      "grooveTolerance": {
+        "lower": -0.21,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 29.0,
+      "thickness": 1.5,
+      "freeDiameter": 26.9,
+      "grooveDiameter": 27.6,
+      "grooveWidth": 1.6,
+      "nominalDepth": 0.7,
+      "edgeMin": 2.1,
+      "grooveTolerance": {
+        "lower": -0.21,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 30.0,
+      "thickness": 1.5,
+      "freeDiameter": 27.9,
+      "grooveDiameter": 28.6,
+      "grooveWidth": 1.6,
+      "nominalDepth": 0.7,
+      "edgeMin": 2.1,
+      "grooveTolerance": {
+        "lower": -0.21,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 32.0,
+      "thickness": 1.5,
+      "freeDiameter": 29.6,
+      "grooveDiameter": 30.3,
+      "grooveWidth": 1.6,
+      "nominalDepth": 0.85,
+      "edgeMin": 2.6,
+      "grooveTolerance": {
+        "lower": -0.25,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 34.0,
+      "thickness": 1.5,
+      "freeDiameter": 31.5,
+      "grooveDiameter": 32.3,
+      "grooveWidth": 1.6,
+      "nominalDepth": 0.85,
+      "edgeMin": 2.6,
+      "grooveTolerance": {
+        "lower": -0.25,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 35.0,
+      "thickness": 1.5,
+      "freeDiameter": 32.2,
+      "grooveDiameter": 33.0,
+      "grooveWidth": 1.6,
+      "nominalDepth": 1.0,
+      "edgeMin": 3.0,
+      "grooveTolerance": {
+        "lower": -0.25,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 36.0,
+      "thickness": 1.75,
+      "freeDiameter": 33.2,
+      "grooveDiameter": 34.0,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.0,
+      "edgeMin": 3.0,
+      "grooveTolerance": {
+        "lower": -0.25,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 38.0,
+      "thickness": 1.75,
+      "freeDiameter": 35.2,
+      "grooveDiameter": 36.0,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.0,
+      "edgeMin": 3.0,
+      "grooveTolerance": {
+        "lower": -0.25,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 40.0,
+      "thickness": 1.75,
+      "freeDiameter": 36.5,
+      "grooveDiameter": 37.0,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.25,
+      "edgeMin": 3.8,
+      "grooveTolerance": {
+        "lower": -0.25,
+        "upper": 0
+      },
+      "sourcePage": 4,
+      "reviewNote": "原表槽径 37.0 与表列槽深 1.25 不一致，槽径和槽深暂不作为加工值输出，请向挡圈制造商核对。"
+    },
+    {
+      "kind": "shaft",
+      "diameter": 42.0,
+      "thickness": 1.75,
+      "freeDiameter": 38.5,
+      "grooveDiameter": 39.5,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.25,
+      "edgeMin": 3.8,
+      "grooveTolerance": {
+        "lower": -0.25,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 45.0,
+      "thickness": 1.75,
+      "freeDiameter": 41.5,
+      "grooveDiameter": 42.5,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.25,
+      "edgeMin": 3.8,
+      "grooveTolerance": {
+        "lower": -0.25,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 48.0,
+      "thickness": 1.75,
+      "freeDiameter": 44.5,
+      "grooveDiameter": 45.5,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.25,
+      "edgeMin": 3.8,
+      "grooveTolerance": {
+        "lower": -0.25,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 50.0,
+      "thickness": 2.0,
+      "freeDiameter": 45.8,
+      "grooveDiameter": 47.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 52.0,
+      "thickness": 2.0,
+      "freeDiameter": 47.8,
+      "grooveDiameter": 49.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 55.0,
+      "thickness": 2.0,
+      "freeDiameter": 50.8,
+      "grooveDiameter": 52.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 56.0,
+      "thickness": 2.0,
+      "freeDiameter": 51.8,
+      "grooveDiameter": 53.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 58.0,
+      "thickness": 2.0,
+      "freeDiameter": 53.8,
+      "grooveDiameter": 55.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 60.0,
+      "thickness": 2.0,
+      "freeDiameter": 55.8,
+      "grooveDiameter": 57.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 62.0,
+      "thickness": 2.0,
+      "freeDiameter": 57.8,
+      "grooveDiameter": 59.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 63.0,
+      "thickness": 2.0,
+      "freeDiameter": 58.8,
+      "grooveDiameter": 60.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 65.0,
+      "thickness": 2.5,
+      "freeDiameter": 60.8,
+      "grooveDiameter": 62.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 68.0,
+      "thickness": 2.5,
+      "freeDiameter": 63.5,
+      "grooveDiameter": 65.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 70.0,
+      "thickness": 2.5,
+      "freeDiameter": 65.5,
+      "grooveDiameter": 67.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 72.0,
+      "thickness": 2.5,
+      "freeDiameter": 67.5,
+      "grooveDiameter": 69.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 75.0,
+      "thickness": 2.5,
+      "freeDiameter": 70.5,
+      "grooveDiameter": 72.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 78.0,
+      "thickness": 2.5,
+      "freeDiameter": 73.5,
+      "grooveDiameter": 75.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 80.0,
+      "thickness": 2.5,
+      "freeDiameter": 74.5,
+      "grooveDiameter": 76.5,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 82.0,
+      "thickness": 2.5,
+      "freeDiameter": 76.5,
+      "grooveDiameter": 78.5,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": -0.3,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 85.0,
+      "thickness": 3.0,
+      "freeDiameter": 79.5,
+      "grooveDiameter": 81.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": -0.35,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 88.0,
+      "thickness": 3.0,
+      "freeDiameter": 82.5,
+      "grooveDiameter": 84.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": -0.35,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 90.0,
+      "thickness": 3.0,
+      "freeDiameter": 84.5,
+      "grooveDiameter": 86.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": -0.35,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 95.0,
+      "thickness": 3.0,
+      "freeDiameter": 89.5,
+      "grooveDiameter": 91.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": -0.35,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 100.0,
+      "thickness": 3.0,
+      "freeDiameter": 94.5,
+      "grooveDiameter": 96.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": -0.35,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 105.0,
+      "thickness": 4.0,
+      "freeDiameter": 98.0,
+      "grooveDiameter": 101.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": -0.54,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 110.0,
+      "thickness": 4.0,
+      "freeDiameter": 103.0,
+      "grooveDiameter": 106.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": -0.54,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 115.0,
+      "thickness": 4.0,
+      "freeDiameter": 108.0,
+      "grooveDiameter": 111.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": -0.54,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 120.0,
+      "thickness": 4.0,
+      "freeDiameter": 113.0,
+      "grooveDiameter": 116.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": -0.54,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 125.0,
+      "thickness": 4.0,
+      "freeDiameter": 118.0,
+      "grooveDiameter": 121.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 130.0,
+      "thickness": 4.0,
+      "freeDiameter": 123.0,
+      "grooveDiameter": 126.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 135.0,
+      "thickness": 4.0,
+      "freeDiameter": 128.0,
+      "grooveDiameter": 131.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 140.0,
+      "thickness": 4.0,
+      "freeDiameter": 133.0,
+      "grooveDiameter": 136.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 145.0,
+      "thickness": 4.0,
+      "freeDiameter": 138.0,
+      "grooveDiameter": 141.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 150.0,
+      "thickness": 4.0,
+      "freeDiameter": 142.0,
+      "grooveDiameter": 145.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 155.0,
+      "thickness": 4.0,
+      "freeDiameter": 146.0,
+      "grooveDiameter": 150.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 160.0,
+      "thickness": 4.0,
+      "freeDiameter": 151.0,
+      "grooveDiameter": 155.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 165.0,
+      "thickness": 4.0,
+      "freeDiameter": 155.5,
+      "grooveDiameter": 160.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 170.0,
+      "thickness": 4.0,
+      "freeDiameter": 160.5,
+      "grooveDiameter": 165.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 175.0,
+      "thickness": 4.0,
+      "freeDiameter": 165.5,
+      "grooveDiameter": 170.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 180.0,
+      "thickness": 4.0,
+      "freeDiameter": 170.5,
+      "grooveDiameter": 175.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 185.0,
+      "thickness": 4.0,
+      "freeDiameter": 175.5,
+      "grooveDiameter": 180.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 190.0,
+      "thickness": 4.0,
+      "freeDiameter": 180.5,
+      "grooveDiameter": 185.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 195.0,
+      "thickness": 4.0,
+      "freeDiameter": 185.5,
+      "grooveDiameter": 190.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 200.0,
+      "thickness": 4.0,
+      "freeDiameter": 190.5,
+      "grooveDiameter": 195.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": -0.63,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 210.0,
+      "thickness": 5.0,
+      "freeDiameter": 198.0,
+      "grooveDiameter": 204.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 3.0,
+      "edgeMin": 9.0,
+      "grooveTolerance": {
+        "lower": -0.72,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 220.0,
+      "thickness": 5.0,
+      "freeDiameter": 208.0,
+      "grooveDiameter": 214.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 3.0,
+      "edgeMin": 9.0,
+      "grooveTolerance": {
+        "lower": -0.72,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 230.0,
+      "thickness": 5.0,
+      "freeDiameter": 218.0,
+      "grooveDiameter": 224.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 3.0,
+      "edgeMin": 9.0,
+      "grooveTolerance": {
+        "lower": -0.72,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 240.0,
+      "thickness": 5.0,
+      "freeDiameter": 228.0,
+      "grooveDiameter": 234.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 3.0,
+      "edgeMin": 9.0,
+      "grooveTolerance": {
+        "lower": -0.72,
+        "upper": 0
+      },
+      "sourcePage": 7,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 250.0,
+      "thickness": 5.0,
+      "freeDiameter": 238.0,
+      "grooveDiameter": 244.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 3.0,
+      "edgeMin": 9.0,
+      "grooveTolerance": {
+        "lower": -0.72,
+        "upper": 0
+      },
+      "sourcePage": 8,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 260.0,
+      "thickness": 5.0,
+      "freeDiameter": 245.0,
+      "grooveDiameter": 252.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 4.0,
+      "edgeMin": 12.0,
+      "grooveTolerance": {
+        "lower": -0.81,
+        "upper": 0
+      },
+      "sourcePage": 8,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 270.0,
+      "thickness": 5.0,
+      "freeDiameter": 255.0,
+      "grooveDiameter": 262.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 4.0,
+      "edgeMin": 12.0,
+      "grooveTolerance": {
+        "lower": -0.81,
+        "upper": 0
+      },
+      "sourcePage": 8,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 280.0,
+      "thickness": 5.0,
+      "freeDiameter": 265.0,
+      "grooveDiameter": 272.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 4.0,
+      "edgeMin": 12.0,
+      "grooveTolerance": {
+        "lower": -0.81,
+        "upper": 0
+      },
+      "sourcePage": 8,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 290.0,
+      "thickness": 5.0,
+      "freeDiameter": 275.0,
+      "grooveDiameter": 282.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 4.0,
+      "edgeMin": 12.0,
+      "grooveTolerance": {
+        "lower": -0.81,
+        "upper": 0
+      },
+      "sourcePage": 8,
+      "reviewNote": ""
+    },
+    {
+      "kind": "shaft",
+      "diameter": 300.0,
+      "thickness": 5.0,
+      "freeDiameter": 285.0,
+      "grooveDiameter": 292.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 4.0,
+      "edgeMin": 12.0,
+      "grooveTolerance": {
+        "lower": -0.81,
+        "upper": 0
+      },
+      "sourcePage": 8,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 8.0,
+      "thickness": 0.8,
+      "freeDiameter": 8.7,
+      "grooveDiameter": 8.4,
+      "grooveWidth": 0.9,
+      "nominalDepth": 0.2,
+      "edgeMin": 0.6,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.09
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 9.0,
+      "thickness": 0.8,
+      "freeDiameter": 9.8,
+      "grooveDiameter": 9.4,
+      "grooveWidth": 0.9,
+      "nominalDepth": 0.2,
+      "edgeMin": 0.6,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.09
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 10.0,
+      "thickness": 1.0,
+      "freeDiameter": 10.8,
+      "grooveDiameter": 10.4,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.2,
+      "edgeMin": 0.6,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.11
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 11.0,
+      "thickness": 1.0,
+      "freeDiameter": 11.8,
+      "grooveDiameter": 11.4,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.2,
+      "edgeMin": 0.6,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.11
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 12.0,
+      "thickness": 1.0,
+      "freeDiameter": 13.0,
+      "grooveDiameter": 12.5,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.25,
+      "edgeMin": 0.8,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.11
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 13.0,
+      "thickness": 1.0,
+      "freeDiameter": 14.1,
+      "grooveDiameter": 13.6,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.3,
+      "edgeMin": 0.9,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.11
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 14.0,
+      "thickness": 1.0,
+      "freeDiameter": 15.1,
+      "grooveDiameter": 14.6,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.3,
+      "edgeMin": 0.9,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.11
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 15.0,
+      "thickness": 1.0,
+      "freeDiameter": 16.2,
+      "grooveDiameter": 15.7,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.35,
+      "edgeMin": 1.1,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.11
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 16.0,
+      "thickness": 1.0,
+      "freeDiameter": 17.3,
+      "grooveDiameter": 16.8,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.4,
+      "edgeMin": 1.2,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.11
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 17.0,
+      "thickness": 1.0,
+      "freeDiameter": 18.3,
+      "grooveDiameter": 17.8,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.4,
+      "edgeMin": 1.2,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.11
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 18.0,
+      "thickness": 1.0,
+      "freeDiameter": 19.5,
+      "grooveDiameter": 19.0,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.5,
+      "edgeMin": 1.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.13
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 19.0,
+      "thickness": 1.0,
+      "freeDiameter": 20.5,
+      "grooveDiameter": 20.0,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.5,
+      "edgeMin": 1.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.13
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 20.0,
+      "thickness": 1.0,
+      "freeDiameter": 21.5,
+      "grooveDiameter": 21.0,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.5,
+      "edgeMin": 1.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.13
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 21.0,
+      "thickness": 1.0,
+      "freeDiameter": 22.5,
+      "grooveDiameter": 22.0,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.5,
+      "edgeMin": 1.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.13
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 22.0,
+      "thickness": 1.0,
+      "freeDiameter": 23.5,
+      "grooveDiameter": 23.0,
+      "grooveWidth": 1.1,
+      "nominalDepth": 0.5,
+      "edgeMin": 1.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.13
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 24.0,
+      "thickness": 1.2,
+      "freeDiameter": 25.9,
+      "grooveDiameter": 25.2,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.6,
+      "edgeMin": 1.8,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.21
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 25.0,
+      "thickness": 1.2,
+      "freeDiameter": 26.9,
+      "grooveDiameter": 26.2,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.6,
+      "edgeMin": 1.8,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.21
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 26.0,
+      "thickness": 1.2,
+      "freeDiameter": 27.9,
+      "grooveDiameter": 27.2,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.6,
+      "edgeMin": 1.8,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.21
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 28.0,
+      "thickness": 1.2,
+      "freeDiameter": 30.1,
+      "grooveDiameter": 29.4,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.7,
+      "edgeMin": 2.1,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.21
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 30.0,
+      "thickness": 1.2,
+      "freeDiameter": 32.1,
+      "grooveDiameter": 31.4,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.7,
+      "edgeMin": 2.1,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 31.0,
+      "thickness": 1.2,
+      "freeDiameter": 33.4,
+      "grooveDiameter": 32.7,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.85,
+      "edgeMin": 2.6,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 32.0,
+      "thickness": 1.2,
+      "freeDiameter": 34.4,
+      "grooveDiameter": 33.7,
+      "grooveWidth": 1.3,
+      "nominalDepth": 0.85,
+      "edgeMin": 2.6,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 34.0,
+      "thickness": 1.5,
+      "freeDiameter": 36.5,
+      "grooveDiameter": 35.7,
+      "grooveWidth": 1.6,
+      "nominalDepth": 0.85,
+      "edgeMin": 2.6,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 35.0,
+      "thickness": 1.5,
+      "freeDiameter": 37.8,
+      "grooveDiameter": 37.0,
+      "grooveWidth": 1.6,
+      "nominalDepth": 1.0,
+      "edgeMin": 3.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 36.0,
+      "thickness": 1.5,
+      "freeDiameter": 38.8,
+      "grooveDiameter": 38.0,
+      "grooveWidth": 1.6,
+      "nominalDepth": 1.0,
+      "edgeMin": 3.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 3,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 37.0,
+      "thickness": 1.5,
+      "freeDiameter": 39.8,
+      "grooveDiameter": 39.0,
+      "grooveWidth": 1.6,
+      "nominalDepth": 1.0,
+      "edgeMin": 3.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 38.0,
+      "thickness": 1.5,
+      "freeDiameter": 40.8,
+      "grooveDiameter": 40.0,
+      "grooveWidth": 1.6,
+      "nominalDepth": 1.0,
+      "edgeMin": 3.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 40.0,
+      "thickness": 1.75,
+      "freeDiameter": 43.5,
+      "grooveDiameter": 42.5,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.25,
+      "edgeMin": 3.8,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 42.0,
+      "thickness": 1.75,
+      "freeDiameter": 45.5,
+      "grooveDiameter": 44.5,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.25,
+      "edgeMin": 3.8,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 45.0,
+      "thickness": 1.75,
+      "freeDiameter": 48.5,
+      "grooveDiameter": 47.5,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.25,
+      "edgeMin": 3.8,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 47.0,
+      "thickness": 1.75,
+      "freeDiameter": 50.5,
+      "grooveDiameter": 49.5,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.25,
+      "edgeMin": 3.8,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 48.0,
+      "thickness": 1.75,
+      "freeDiameter": 51.5,
+      "grooveDiameter": 50.5,
+      "grooveWidth": 1.85,
+      "nominalDepth": 1.25,
+      "edgeMin": 3.8,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.25
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 50.0,
+      "thickness": 2.0,
+      "freeDiameter": 54.2,
+      "grooveDiameter": 53.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 52.0,
+      "thickness": 2.0,
+      "freeDiameter": 56.2,
+      "grooveDiameter": 55.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 55.0,
+      "thickness": 2.0,
+      "freeDiameter": 59.2,
+      "grooveDiameter": 58.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 56.0,
+      "thickness": 2.0,
+      "freeDiameter": 60.2,
+      "grooveDiameter": 59.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 58.0,
+      "thickness": 2.0,
+      "freeDiameter": 62.2,
+      "grooveDiameter": 61.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 60.0,
+      "thickness": 2.0,
+      "freeDiameter": 64.2,
+      "grooveDiameter": 63.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 62.0,
+      "thickness": 2.0,
+      "freeDiameter": 66.2,
+      "grooveDiameter": 65.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 63.0,
+      "thickness": 2.0,
+      "freeDiameter": 67.2,
+      "grooveDiameter": 66.0,
+      "grooveWidth": 2.15,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 65.0,
+      "thickness": 2.5,
+      "freeDiameter": 69.2,
+      "grooveDiameter": 68.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 68.0,
+      "thickness": 2.5,
+      "freeDiameter": 72.5,
+      "grooveDiameter": 71.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 70.0,
+      "thickness": 2.5,
+      "freeDiameter": 74.5,
+      "grooveDiameter": 73.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 72.0,
+      "thickness": 2.5,
+      "freeDiameter": 76.5,
+      "grooveDiameter": 75.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 75.0,
+      "thickness": 2.5,
+      "freeDiameter": 79.5,
+      "grooveDiameter": 78.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 78.0,
+      "thickness": 2.5,
+      "freeDiameter": 82.5,
+      "grooveDiameter": 81.0,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.5,
+      "edgeMin": 4.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.3
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 80.0,
+      "thickness": 2.5,
+      "freeDiameter": 85.5,
+      "grooveDiameter": 83.5,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.35
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 82.0,
+      "thickness": 2.5,
+      "freeDiameter": 87.5,
+      "grooveDiameter": 85.5,
+      "grooveWidth": 2.65,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.35
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 85.0,
+      "thickness": 3.0,
+      "freeDiameter": 90.5,
+      "grooveDiameter": 88.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.35
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 88.0,
+      "thickness": 3.0,
+      "freeDiameter": 93.5,
+      "grooveDiameter": 91.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.35
+      },
+      "sourcePage": 4,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 90.0,
+      "thickness": 3.0,
+      "freeDiameter": 95.5,
+      "grooveDiameter": 93.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.35
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 92.0,
+      "thickness": 3.0,
+      "freeDiameter": 97.5,
+      "grooveDiameter": 95.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.35
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 95.0,
+      "thickness": 3.0,
+      "freeDiameter": 100.5,
+      "grooveDiameter": 98.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.35
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 98.0,
+      "thickness": 3.0,
+      "freeDiameter": 103.5,
+      "grooveDiameter": 101.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.35
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 100.0,
+      "thickness": 3.0,
+      "freeDiameter": 105.5,
+      "grooveDiameter": 103.5,
+      "grooveWidth": 3.15,
+      "nominalDepth": 1.75,
+      "edgeMin": 5.3,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.35
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 102.0,
+      "thickness": 4.0,
+      "freeDiameter": 108.0,
+      "grooveDiameter": 106.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.54
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 105.0,
+      "thickness": 4.0,
+      "freeDiameter": 112.0,
+      "grooveDiameter": 109.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.54
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 108.0,
+      "thickness": 4.0,
+      "freeDiameter": 115.0,
+      "grooveDiameter": 112.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.54
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 110.0,
+      "thickness": 4.0,
+      "freeDiameter": 117.0,
+      "grooveDiameter": 114.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.54
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 112.0,
+      "thickness": 4.0,
+      "freeDiameter": 119.0,
+      "grooveDiameter": 116.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.54
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 115.0,
+      "thickness": 4.0,
+      "freeDiameter": 122.0,
+      "grooveDiameter": 119.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.54
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 120.0,
+      "thickness": 4.0,
+      "freeDiameter": 127.0,
+      "grooveDiameter": 124.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.54
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 125.0,
+      "thickness": 4.0,
+      "freeDiameter": 132.0,
+      "grooveDiameter": 129.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.63
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 130.0,
+      "thickness": 4.0,
+      "freeDiameter": 137.0,
+      "grooveDiameter": 134.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.63
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 135.0,
+      "thickness": 4.0,
+      "freeDiameter": 142.0,
+      "grooveDiameter": 139.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.63
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 140.0,
+      "thickness": 4.0,
+      "freeDiameter": 147.0,
+      "grooveDiameter": 144.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.63
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 145.0,
+      "thickness": 4.0,
+      "freeDiameter": 152.0,
+      "grooveDiameter": 149.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.0,
+      "edgeMin": 6.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.63
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 150.0,
+      "thickness": 4.0,
+      "freeDiameter": 158.0,
+      "grooveDiameter": 155.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.63
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 155.0,
+      "thickness": 4.0,
+      "freeDiameter": 164.0,
+      "grooveDiameter": 160.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.63
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 160.0,
+      "thickness": 4.0,
+      "freeDiameter": 169.0,
+      "grooveDiameter": 165.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.63
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 165.0,
+      "thickness": 4.0,
+      "freeDiameter": 174.5,
+      "grooveDiameter": 170.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.63
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 170.0,
+      "thickness": 4.0,
+      "freeDiameter": 179.5,
+      "grooveDiameter": 175.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 175.0,
+      "thickness": 4.0,
+      "freeDiameter": 184.5,
+      "grooveDiameter": 180.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 180.0,
+      "thickness": 4.0,
+      "freeDiameter": 189.5,
+      "grooveDiameter": 185.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 185.0,
+      "thickness": 4.0,
+      "freeDiameter": 194.5,
+      "grooveDiameter": 190.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 5,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 190.0,
+      "thickness": 4.0,
+      "freeDiameter": 199.5,
+      "grooveDiameter": 195.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 195.0,
+      "thickness": 4.0,
+      "freeDiameter": 204.5,
+      "grooveDiameter": 200.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 200.0,
+      "thickness": 4.0,
+      "freeDiameter": 209.5,
+      "grooveDiameter": 205.0,
+      "grooveWidth": 4.15,
+      "nominalDepth": 2.5,
+      "edgeMin": 7.5,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 210.0,
+      "thickness": 5.0,
+      "freeDiameter": 222.0,
+      "grooveDiameter": 216.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 3.0,
+      "edgeMin": 9.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 220.0,
+      "thickness": 5.0,
+      "freeDiameter": 232.0,
+      "grooveDiameter": 226.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 3.0,
+      "edgeMin": 9.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 230.0,
+      "thickness": 5.0,
+      "freeDiameter": 242.0,
+      "grooveDiameter": 236.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 3.0,
+      "edgeMin": 9.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 240.0,
+      "thickness": 5.0,
+      "freeDiameter": 252.0,
+      "grooveDiameter": 246.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 3.0,
+      "edgeMin": 9.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 250.0,
+      "thickness": 5.0,
+      "freeDiameter": 262.0,
+      "grooveDiameter": 256.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 3.0,
+      "edgeMin": 9.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.72
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 260.0,
+      "thickness": 5.0,
+      "freeDiameter": 275.0,
+      "grooveDiameter": 268.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 4.0,
+      "edgeMin": 12.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.81
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 270.0,
+      "thickness": 5.0,
+      "freeDiameter": 285.0,
+      "grooveDiameter": 278.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 4.0,
+      "edgeMin": 12.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.81
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 280.0,
+      "thickness": 5.0,
+      "freeDiameter": 295.0,
+      "grooveDiameter": 288.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 4.0,
+      "edgeMin": 12.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.81
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 290.0,
+      "thickness": 5.0,
+      "freeDiameter": 305.0,
+      "grooveDiameter": 298.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 4.0,
+      "edgeMin": 12.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.81
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    },
+    {
+      "kind": "bore",
+      "diameter": 300.0,
+      "thickness": 5.0,
+      "freeDiameter": 315.0,
+      "grooveDiameter": 308.0,
+      "grooveWidth": 5.15,
+      "nominalDepth": 4.0,
+      "edgeMin": 12.0,
+      "grooveTolerance": {
+        "lower": 0,
+        "upper": 0.81
+      },
+      "sourcePage": 6,
+      "reviewNote": ""
+    }
+  ]
+}

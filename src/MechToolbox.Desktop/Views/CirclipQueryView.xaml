@@ -1,0 +1,47 @@
+<UserControl x:Class="MechToolbox.Desktop.Views.CirclipQueryView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:MechToolbox.Desktop.Views" xmlns:core="clr-namespace:MechToolbox.Core;assembly=MechToolbox.Core">
+ <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+  <Grid Margin="0,18,4,18">
+   <Grid.ColumnDefinitions><ColumnDefinition Width="230"/><ColumnDefinition Width="20"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+   <StackPanel>
+    <Border Style="{StaticResource Card}" Padding="18"><StackPanel>
+     <TextBlock Text="01  选择卡簧" Style="{StaticResource Caption}" Margin="0,0,0,18"/>
+     <TextBlock Text="挡圈类型" Margin="0,0,0,8"/>
+     <ComboBox ItemsSource="{x:Static core:CirclipViewModel.Kinds}" SelectedItem="{Binding SelectedKind}" DisplayMemberPath="Name" AutomationProperties.Name="卡簧类型"/>
+     <TextBlock Text="{Binding InputLabel}" Margin="0,20,0,8"/>
+     <ComboBox ItemsSource="{Binding Diameters}" IsEditable="True" IsTextSearchEnabled="False" Text="{Binding DiameterText,UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="卡簧公称直径"/>
+     <TextBlock Text="{Binding SupportedRange}" Style="{StaticResource Caption}" Margin="0,16,0,0" LineHeight="21"/>
+    </StackPanel></Border>
+    <Border Background="#E6EFEE" CornerRadius="8" Padding="16" Margin="0,16,0,0"><TextBlock Text="轴用卡簧装在轴外槽；孔用卡簧装在孔内槽。本页查询标准型 A 型。卡簧标号按公称轴径或孔径选取，自由状态直径不能直接当作槽径。" Style="{StaticResource Caption}" LineHeight="21"/></Border>
+   </StackPanel>
+   <StackPanel Grid.Column="2">
+    <TextBlock Text="{Binding Error}" TextWrapping="Wrap" Foreground="#B34632" Margin="0,0,0,12"/>
+    <StackPanel>
+     <StackPanel.Style><Style TargetType="StackPanel"><Style.Triggers><DataTrigger Binding="{Binding HasResult}" Value="False"><Setter Property="Visibility" Value="Collapsed"/></DataTrigger></Style.Triggers></Style></StackPanel.Style>
+     <Grid Margin="0,0,0,18"><StackPanel Margin="0,0,150,0"><TextBlock Text="{Binding Result.TypeName}" FontSize="24" FontWeight="SemiBold"/><TextBlock Text="{Binding Result.Designation}" Style="{StaticResource Caption}" Margin="0,8,0,0"/></StackPanel><Button Content="复制查询结果" Click="CopyResult" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{StaticResource Accent}" Foreground="White" BorderThickness="0"/></Grid>
+     <TextBlock Text="02  卡簧尺寸" Style="{StaticResource Caption}" Margin="0,0,0,10"/>
+     <Border Style="{StaticResource Card}" Padding="16" Margin="0,0,0,20"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+      <StackPanel><TextBlock Text="厚度 s · 基本尺寸" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.ThicknessText}" FontSize="29" FontWeight="SemiBold" Margin="0,8,0,0"/></StackPanel>
+      <StackPanel Grid.Column="1"><TextBlock Text="{Binding Result.FreeDiameterName}" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.FreeDiameterText}" FontSize="29" FontWeight="SemiBold" Margin="0,8,0,0"/></StackPanel>
+     </Grid></Border>
+     <TextBlock Text="03  卡簧槽尺寸" Style="{StaticResource Caption}" Margin="0,0,0,10"/>
+     <Border Style="{StaticResource Card}" Padding="16"><StackPanel>
+      <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+       <StackPanel><TextBlock Text="槽径 d₂" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.GrooveText}" FontSize="29" FontWeight="SemiBold" Foreground="{StaticResource Accent}" Margin="0,8,0,8"/><TextBlock Text="{Binding Result.GrooveDeviation}" Style="{StaticResource Caption}"/></StackPanel>
+       <StackPanel Grid.Column="1"><TextBlock Text="槽宽 m" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.WidthText}" FontSize="29" FontWeight="SemiBold" Margin="0,8,0,8"/><TextBlock Text="{Binding Result.WidthDeviation}" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.WidthLimits}" Style="{StaticResource Caption}" Margin="0,12,0,0"/></StackPanel>
+      </Grid>
+      <TextBlock Text="{Binding Result.GrooveLimits}" Style="{StaticResource Caption}" LineHeight="21" Margin="0,12,0,0"/>
+      <Border Height="1" Background="{StaticResource Line}" Margin="0,16"/>
+      <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+       <StackPanel><TextBlock Text="名义槽深 t" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.DepthText}" FontSize="25" FontWeight="SemiBold" Margin="0,8,0,0"/></StackPanel>
+       <StackPanel Grid.Column="1"><TextBlock Text="端部边距 n · 最小值" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.EdgeText}" FontSize="25" FontWeight="SemiBold" Margin="0,8,0,0"/></StackPanel>
+      </Grid>
+     </StackPanel></Border>
+     <Border Style="{StaticResource Card}" Padding="16" Margin="0,16,0,0"><StackPanel><local:CirclipDiagram Result="{Binding Result}" Height="180"/><TextBlock Text="沟槽轴向剖面示意，不按比例；绿色为卡簧。n 从沟槽靠近端面的一侧量至端面。" Style="{StaticResource Caption}" Margin="0,10,0,0"/></StackPanel></Border>
+     <TextBlock Text="受载边槽底圆角 r" Style="{StaticResource Caption}" Margin="0,16,0,4"/><TextBlock Text="{Binding Result.RadiusText}"/>
+     <TextBlock Text="{Binding Result.SourceText}" Style="{StaticResource Caption}" FontSize="11" Margin="0,12,0,0"/>
+     <TextBlock Text="尺寸单位 mm。边距须结合实际载荷及材料复核；本页不计算承载力与极限转速。" Style="{StaticResource Caption}" LineHeight="20" Margin="0,8,0,0"/>
+    </StackPanel>
+   </StackPanel>
+  </Grid>
+ </ScrollViewer>
+</UserControl>

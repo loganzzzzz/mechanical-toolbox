@@ -1,0 +1,83 @@
+<UserControl x:Class="MechToolbox.Desktop.Views.KeywayQueryView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:MechToolbox.Desktop.Views">
+  <UserControl.Resources>
+    <BooleanToVisibilityConverter x:Key="VisibleIfTrue"/>
+    <Style x:Key="Value" TargetType="TextBlock"><Setter Property="FontSize" Value="22"/><Setter Property="FontWeight" Value="SemiBold"/><Setter Property="Margin" Value="0,5,0,6"/></Style>
+  </UserControl.Resources>
+  <TabControl BorderThickness="0" Background="Transparent" Padding="0,16,0,0">
+    <TabControl.Resources><Style TargetType="TabItem"><Setter Property="Padding" Value="18,10"/><Setter Property="FontSize" Value="14"/></Style></TabControl.Resources>
+    <TabItem Header="键槽查询">
+      <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Margin="0,4,4,12">
+          <Grid.ColumnDefinitions><ColumnDefinition Width="210"/><ColumnDefinition Width="20"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+          <StackPanel>
+            <Border Style="{StaticResource Card}" Padding="18"><StackPanel>
+              <TextBlock Text="01  查询条件" Style="{StaticResource Caption}" Margin="0,0,0,18"/>
+              <TextBlock Text="轴径 d（mm）" FontWeight="SemiBold" Margin="0,0,0,10"/>
+              <TextBox x:Name="DiameterInput" Text="{Binding DiameterText, UpdateSourceTrigger=PropertyChanged}" FontSize="23" AutomationProperties.Name="键槽查询轴径"/>
+              <TextBlock Text="常用轴径" Style="{StaticResource Caption}" Margin="0,18,0,9"/>
+              <UniformGrid Columns="3">
+                <Button Content="12" Tag="12" Click="QuickSelect" Padding="0,9" Margin="0,0,5,6"/><Button Content="20" Tag="20" Click="QuickSelect" Padding="0,9" Margin="0,0,5,6"/><Button Content="30" Tag="30" Click="QuickSelect" Padding="0,9" Margin="0,0,0,6"/>
+                <Button Content="40" Tag="40" Click="QuickSelect" Padding="0,9" Margin="0,0,5,0"/><Button Content="50" Tag="50" Click="QuickSelect" Padding="0,9" Margin="0,0,5,0"/><Button Content="80" Tag="80" Click="QuickSelect" Padding="0,9"/>
+              </UniformGrid>
+              <Border Height="1" Background="{StaticResource Line}" Margin="0,22,0,18"/>
+              <TextBlock Text="联结类型" FontWeight="SemiBold" Margin="0,0,0,10"/>
+              <ComboBox ItemsSource="{Binding Fits}" SelectedItem="{Binding SelectedFit}" DisplayMemberPath="Name" FontSize="15" AutomationProperties.Name="键槽联结类型"/>
+              <TextBlock Text="{Binding SupportedRange}" Style="{StaticResource Caption}" LineHeight="20" Margin="0,18,0,0"/>
+            </StackPanel></Border>
+            <Border Background="#E6EFEE" CornerRadius="8" Padding="16" Margin="0,16,0,0"><StackPanel><TextBlock Text="选键说明" Foreground="{StaticResource Accent}" FontWeight="SemiBold" Margin="0,0,0,9"/><TextBlock Text="按轴径给出常用键截面推荐。实际选键还需结合载荷和轴、轮毂结构确定。" Style="{StaticResource Caption}" LineHeight="21"/></StackPanel></Border>
+          </StackPanel>
+          <StackPanel Grid.Column="2">
+            <TextBlock Text="{Binding Error}" Foreground="#AD3C2E" TextWrapping="Wrap" FontSize="15" Margin="0,0,0,12"/>
+            <StackPanel Visibility="{Binding HasResult, Converter={StaticResource VisibleIfTrue}}">
+              <Grid Margin="0,0,0,14"><StackPanel><TextBlock Text="{Binding Result.SectionText}" FontSize="32" FontWeight="SemiBold"/><TextBlock Text="普通平键 · 推荐截面 b × h" Style="{StaticResource Caption}" Margin="0,6,0,0"/></StackPanel><Button Content="复制查询结果" Click="CopyResult" IsEnabled="{Binding HasResult}" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{StaticResource Accent}" Foreground="White" BorderThickness="0"/></Grid>
+              <TextBlock Text="{Binding SelectionText}" Style="{StaticResource Caption}" Margin="0,0,0,18"/>
+              <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="14"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                <Border Style="{StaticResource Card}" Padding="18"><StackPanel>
+                  <TextBlock Text="轴上的键槽" FontSize="17" FontWeight="SemiBold" Margin="0,0,0,18"/>
+                  <TextBlock Text="槽宽 b · 公差带" Style="{StaticResource Caption}"/>
+                  <TextBlock Text="{Binding Result.ShaftWidth}" Style="{StaticResource Value}"/>
+                  <TextBlock Text="{Binding Result.ShaftWidthDeviation}" Style="{StaticResource Caption}"/>
+                  <TextBlock Text="{Binding Result.ShaftWidthLimits}" Style="{StaticResource Caption}" Margin="0,5,0,0"/>
+                  <Border Height="1" Background="{StaticResource Line}" Margin="0,16,0,16"/>
+                  <TextBlock Text="槽深 t₁" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.ShaftDepth}" Style="{StaticResource Value}" Foreground="{StaticResource Accent}"/>
+                  <TextBlock Text="{Binding Result.DepthDeviation}" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.ShaftDepthLimits}" Style="{StaticResource Caption}" Margin="0,5,0,0"/>
+                  <Border Height="1" Background="{StaticResource Line}" Margin="0,16,0,16"/>
+                  <TextBlock Text="检验尺寸 d − t₁" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.ShaftInspectionText}" Style="{StaticResource Value}"/>
+                  <TextBlock Text="{Binding Result.ShaftInspectionDeviation}" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.ShaftInspectionLimits}" Style="{StaticResource Caption}" Margin="0,5,0,0"/>
+                </StackPanel></Border>
+                <Border Grid.Column="2" Style="{StaticResource Card}" Padding="18"><StackPanel>
+                  <TextBlock Text="轮毂上的键槽" FontSize="17" FontWeight="SemiBold" Margin="0,0,0,18"/>
+                  <TextBlock Text="槽宽 b · 公差带" Style="{StaticResource Caption}"/>
+                  <TextBlock Text="{Binding Result.HubWidth}" Style="{StaticResource Value}"/>
+                  <TextBlock Text="{Binding Result.HubWidthDeviation}" Style="{StaticResource Caption}"/>
+                  <TextBlock Text="{Binding Result.HubWidthLimits}" Style="{StaticResource Caption}" Margin="0,5,0,0"/>
+                  <Border Height="1" Background="{StaticResource Line}" Margin="0,16,0,16"/>
+                  <TextBlock Text="槽深 t₂" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.HubDepth}" Style="{StaticResource Value}" Foreground="{StaticResource Accent}"/>
+                  <TextBlock Text="{Binding Result.DepthDeviation}" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.HubDepthLimits}" Style="{StaticResource Caption}" Margin="0,5,0,0"/>
+                  <Border Height="1" Background="{StaticResource Line}" Margin="0,16,0,16"/>
+                  <TextBlock Text="检验尺寸 d + t₂" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.HubInspectionText}" Style="{StaticResource Value}"/>
+                  <TextBlock Text="{Binding Result.HubInspectionDeviation}" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.HubInspectionLimits}" Style="{StaticResource Caption}" Margin="0,5,0,0"/>
+                </StackPanel></Border>
+              </Grid>
+              <Border Style="{StaticResource Card}" Padding="18" Margin="0,16,0,0"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="190"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                <local:KeywayDiagram Result="{Binding Result}" Height="168" Margin="0,0,16,0"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center"><TextBlock Text="槽底圆角 r" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.RadiusText}" FontSize="19" FontWeight="SemiBold" Margin="0,6,0,14"/><TextBlock Text="键顶部间隙 t₁ + t₂ − h" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.TopClearance}" Margin="0,6,0,12"/><TextBlock Text="深色为轴、浅色为轮毂、绿色为键。剖面示意不按比例，省略圆角。" Style="{StaticResource Caption}" LineHeight="20"/></StackPanel>
+              </Grid></Border>
+              <TextBlock Text="{Binding SourceText}" Style="{StaticResource Caption}" Margin="0,14,0,0"/>
+              <TextBlock Text="轴径分档为设计推荐，GB/T 1095-2003 表 1 不规定轴径。键长需按轮毂长度和传递载荷另行确定。" Style="{StaticResource Caption}" LineHeight="20" Margin="0,7,0,0"/>
+            </StackPanel>
+          </StackPanel>
+        </Grid>
+      </ScrollViewer>
+    </TabItem>
+    <TabItem Header="键槽尺寸对照表">
+      <Grid><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+        <TextBlock Text="普通平键 · 槽宽公差随联结类型变化；双击一行按该档上限轴径查询。" Style="{StaticResource Caption}" Margin="0,6,0,14"/>
+        <DataGrid x:Name="SizeTable" Grid.Row="1" ItemsSource="{Binding Sizes}" MouseDoubleClick="TableDoubleClick" AutomationProperties.Name="键槽尺寸对照表">
+          <DataGrid.Columns><DataGridTextColumn Header="推荐轴径 d" Binding="{Binding RangeText}" Width="155"/><DataGridTextColumn Header="键 b×h" Binding="{Binding Section}" Width="*"/><DataGridTextColumn Header="轴槽深 t₁" Binding="{Binding ShaftDepth}" Width="100"/><DataGridTextColumn Header="毂槽深 t₂" Binding="{Binding HubDepth}" Width="100"/><DataGridTextColumn Header="深度偏差" Binding="{Binding DepthDeviation}" Width="110"/><DataGridTextColumn Header="圆角 r" Binding="{Binding RadiusText}" Width="*"/></DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Row="2" Text="单位 mm。区间除首档含 6 外，均不含下限、包含上限，例如 30 mm 归入 &gt;22～30 档。" Style="{StaticResource Caption}" Margin="0,12,0,0"/>
+      </Grid>
+    </TabItem>
+  </TabControl>
+</UserControl>
