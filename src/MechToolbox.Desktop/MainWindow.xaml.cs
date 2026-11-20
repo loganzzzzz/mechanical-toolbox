@@ -81,7 +81,7 @@ public partial class MainWindow : Window
     private void ShowExtensions(object sender, RoutedEventArgs e)
     {
         var panel = NewInfoPage("扩展与版本");
-        Paragraph(panel, "机设工具箱  v0.3.1", "原生 Windows 桌面应用 · 完全离线查询 · 无需管理员权限\n建议运行环境：Windows 10 / 11，64 位。\n粗牙标号省略螺距；孔径反查只需一个输入，同时列出 ±3 mm 内的通孔与攻丝底孔，含边界并显示差值。尺寸查询增加 GB/T 70.1-2008 内六角圆柱头的头径、头高和内六角尺寸。新增轴用与孔用卡簧及卡簧槽查询（标准型 A 型）。");
+        Paragraph(panel, "机设工具箱  v0.3.2", "原生 Windows 桌面应用 · 完全离线查询 · 无需管理员权限\n建议运行环境：Windows 10 / 11，64 位。\n粗牙标号省略螺距；孔径反查只需一个输入，同时列出 ±3 mm 内的通孔与攻丝底孔，含边界并显示差值。尺寸查询增加 GB/T 70.1-2008 内六角圆柱头的头径、头高和内六角尺寸。新增轴用与孔用卡簧及卡簧槽查询（标准型 A 型）。");
         Paragraph(panel, "已预留的扩展接口", "① 功能模块 IStandardModule：为新标准定义标识、名称和查询逻辑。\n② 数据提供器 IStandardDataProvider<T>：独立读取 JSON、数据库或企业标准。\n③ 界面适配 DesktopModuleRegistry：注册新模块后自动进入侧边栏。\n④ 数据版本 SchemaVersion / DataVersion：启动时校验结构、尺寸和来源。");
         Paragraph(panel, "下一阶段可以接入", "沉孔与沉头孔、销孔、轴孔配合、常用型材等。新功能通过独立模块和独立数据集接入，当前版本尚未提供这些查询。");
         Paragraph(panel, "数据维护", "螺纹数据位于 data/metric-coarse.v1.json；键槽数据位于 data/parallel-keyways-gb.v1.json；内六角圆柱头数据位于 data/socket-head-gbt70-1.v1.json；卡簧数据位于 data/circlips-gb.v1.json。更新数据须核对来源并同步版本和回归测试；缺失或无效的数据会阻止启动。详细开发接口见源码中的 docs/EXTENDING.md。");

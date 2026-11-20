@@ -24,7 +24,11 @@ internal static class CirclipChecks
         check(module.Query(CirclipKind.Shaft,4).GrooveTolerance.Lower==-.05m,"shaft4 original table deviation");
         check(module.Query(CirclipKind.Bore,30).GrooveTolerance.Upper==.25m,"bore30 original table deviation");
         var disputed=module.Query(CirclipKind.Shaft,40);
-        check(disputed.NeedsReview && disputed.GrooveText=="待核对" && disputed.DepthText=="待核对" && disputed.GrooveDeviation=="槽径暂不输出","original shaft40 conflict is blocked");
+        check(disputed.NeedsReview && disputed.GrooveText=="⌀37" && disputed.DepthText=="1.25","shaft40 displays current GB table values without manufacturer substitution");
+        check(disputed.GrooveDeviation=="上 / 下偏差：0 / -0.25 mm" && disputed.GrooveLimits=="槽径极限：36.75 ～ 37 mm","shaft40 groove numeric deviation and limits restored");
+        check(disputed.WidthText=="1.85 H13" && disputed.WidthLimits=="槽宽极限：1.85 ～ 1.99 mm" && disputed.EdgeText=="≥ 3.8","shaft40 other dimensions remain available");
+        check(disputed.ReviewNote.Contains("国标原表") && disputed.ReviewNote.Contains("1.5") && module.Summary(disputed).Contains(disputed.ReviewNote),"shaft40 dimensional inconsistency remains explicit in copied results");
+        check(module.Summary(disputed).Contains("槽径 d₂：⌀37") && module.Summary(disputed).Contains("表列名义槽深 t：1.25"),"shaft40 copied query includes both GB table dimensions");
         check(!module.Query(CirclipKind.Bore,40).NeedsReview,"bore40 unaffected by shaft40 conflict");
         reject(()=>module.Query(CirclipKind.Shaft,27),"no extrapolated shaft27 circlip");
         reject(()=>module.Query(CirclipKind.Bore,29),"no interpolated bore29 circlip");
@@ -40,6 +44,10 @@ internal static class CirclipChecks
         vm.SelectedKind=CirclipViewModel.Kinds[0];vm.DiameterText="3";check(vm.Result?.Diameter==3,"shaft minimum");
         vm.SelectedKind=CirclipViewModel.Kinds[1];check(vm.Result is null,"shaft-to-bore switch clears unsupported diameter");
         vm.DiameterText="30";check(vm.Result?.GrooveDiameter==31.4m,"circlip recovers after invalid input");
+        vm.SelectedKind=CirclipViewModel.Kinds[0];vm.DiameterText="40";check(vm.Result?.NeedsReview==true && vm.Result.GrooveText=="⌀37","shaft40 query restores dimensions and note");
+        vm.DiameterText="42";check(vm.Result?.NeedsReview==false && vm.Result.ReviewNote=="","switching away clears shaft40 review note");
+        vm.SelectedKind=CirclipViewModel.Kinds[1];vm.DiameterText="40";check(vm.Result?.NeedsReview==false && vm.Result.GrooveDiameter==42.5m,"bore40 remains independent from shaft40");
+        vm.DiameterText="30";
         var oldCulture=CultureInfo.CurrentCulture;
         CultureInfo.CurrentCulture=CultureInfo.GetCultureInfo("de-DE");
         check(vm.Result!.GrooveText=="⌀31.4" && module.Summary(vm.Result).Contains("1.3 H13"),"circlip decimal format invariant");

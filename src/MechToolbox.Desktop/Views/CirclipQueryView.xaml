@@ -24,6 +24,10 @@
       <StackPanel Grid.Column="1"><TextBlock Text="{Binding Result.FreeDiameterName}" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.FreeDiameterText}" FontSize="29" FontWeight="SemiBold" Margin="0,8,0,0"/></StackPanel>
      </Grid></Border>
      <TextBlock Text="03  卡簧槽尺寸" Style="{StaticResource Caption}" Margin="0,0,0,10"/>
+     <Border x:Name="ReviewNotice" Background="#FFF2DC" BorderBrush="#E2BD77" BorderThickness="1" CornerRadius="8" Padding="14" Margin="0,0,0,12" AutomationProperties.Name="国标原表尺寸核对提示">
+      <Border.Style><Style TargetType="Border"><Setter Property="Visibility" Value="Collapsed"/><Style.Triggers><DataTrigger Binding="{Binding Result.NeedsReview}" Value="True"><Setter Property="Visibility" Value="Visible"/></DataTrigger></Style.Triggers></Style></Border.Style>
+      <StackPanel><TextBlock Text="国标原表核对提示" FontWeight="SemiBold" Foreground="#805411"/><TextBlock Text="{Binding Result.ReviewNote}" TextWrapping="Wrap" Foreground="#805411" Margin="0,6,0,0" LineHeight="21"/></StackPanel>
+     </Border>
      <Border Style="{StaticResource Card}" Padding="16"><StackPanel>
       <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
        <StackPanel><TextBlock Text="槽径 d₂" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.GrooveText}" FontSize="29" FontWeight="SemiBold" Foreground="{StaticResource Accent}" Margin="0,8,0,8"/><TextBlock Text="{Binding Result.GrooveDeviation}" Style="{StaticResource Caption}"/></StackPanel>
@@ -32,7 +36,7 @@
       <TextBlock Text="{Binding Result.GrooveLimits}" Style="{StaticResource Caption}" LineHeight="21" Margin="0,12,0,0"/>
       <Border Height="1" Background="{StaticResource Line}" Margin="0,16"/>
       <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
-       <StackPanel><TextBlock Text="名义槽深 t" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.DepthText}" FontSize="25" FontWeight="SemiBold" Margin="0,8,0,0"/></StackPanel>
+       <StackPanel><TextBlock Text="名义槽深 t · 国标表列" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.DepthText}" FontSize="25" FontWeight="SemiBold" Margin="0,8,0,0"/></StackPanel>
        <StackPanel Grid.Column="1"><TextBlock Text="端部边距 n · 最小值" Style="{StaticResource Caption}"/><TextBlock Text="{Binding Result.EdgeText}" FontSize="25" FontWeight="SemiBold" Margin="0,8,0,0"/></StackPanel>
       </Grid>
      </StackPanel></Border>

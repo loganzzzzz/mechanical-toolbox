@@ -138,6 +138,8 @@ internal static class UiSmoke
                 if (cirVm.Result != cirVm.Module.Query(kind.Kind,d)) throw new Exception("卡簧选择显示过期结果。");
                 if (!Children<TextBlock>(cirView).Any(x => x.Text == cirVm.Result.WidthDeviation) ||
                     !Children<TextBlock>(cirView).Any(x => x.Text == cirVm.Result.WidthLimits)) throw new Exception("卡簧槽宽数值偏差未绑定。");
+                var review = (Border)cirView.FindName("ReviewNotice");
+                if (review.Visibility != (cirVm.Result.NeedsReview ? Visibility.Visible : Visibility.Collapsed)) throw new Exception("国标原表核对提示未随规格清理。");
                 cirChecks++;
             }
             diameterCombo.SetCurrentValue(ComboBox.TextProperty,"30"); Flush(window);
@@ -149,12 +151,24 @@ internal static class UiSmoke
         diameterCombo.SetCurrentValue(ComboBox.TextProperty,"invalid"); Flush(window);
         if(cirVm.HasResult) throw new Exception("卡簧无效输入残留结果。");
         kindCombo.SelectedItem=CirclipViewModel.Kinds[0]; diameterCombo.SetCurrentValue(ComboBox.TextProperty,"40"); Flush(window);
-        if(cirVm.Result?.GrooveText != "待核对" || Children<TextBlock>(cirView).Any(x=>x.Text=="⌀37")) throw new Exception("轴用40矛盾槽径未屏蔽。");
+        if(cirVm.Result is not {NeedsReview:true,GrooveDiameter:37m,NominalDepth:1.25m} shaft40 ||
+            !Children<TextBlock>(cirView).Any(x=>x.Text==shaft40.GrooveText) ||
+            !Children<TextBlock>(cirView).Any(x=>x.Text==shaft40.DepthText) ||
+            !Children<TextBlock>(cirView).Any(x=>x.Text==shaft40.GrooveLimits) ||
+            !Children<TextBlock>(cirView).Any(x=>x.Text==shaft40.ReviewNote) ||
+            ((Border)cirView.FindName("ReviewNotice")).Visibility != Visibility.Visible)
+            throw new Exception("轴用40国标原表值或核对提示缺失。");
         Capture(window,Path.Combine(folder,"circlip-review.png"));
+        window.Width=window.MinWidth; window.Height=window.MinHeight; Flush(window);
+        Capture(window,Path.Combine(folder,"circlip-review-minimum.png"));
+        window.Width=1200; window.Height=900; Flush(window);
+        kindCombo.SelectedItem=CirclipViewModel.Kinds[1]; Flush(window);
+        if(cirVm.Result?.NeedsReview != false || ((Border)cirView.FindName("ReviewNotice")).Visibility != Visibility.Collapsed)
+            throw new Exception("孔用40残留了轴用40核对提示。");
         kindCombo.SelectedItem=CirclipViewModel.Kinds[1]; diameterCombo.SetCurrentValue(ComboBox.TextProperty,"30"); Flush(window);
         window.ModuleList.SelectedIndex=0; Flush(window); window.ModuleList.SelectedIndex=2; Flush(window);
         if(!ReferenceEquals(Children<CirclipQueryView>(window).Single(),cirView) || cirVm.Result?.Kind!=CirclipKind.Bore || cirVm.Result.Diameter!=30) throw new Exception("卡簧模块状态未保留。");
-        File.WriteAllText(Path.Combine(folder, "PASS.txt"), $"PASS: numeric H12/H13/H14 and 6H; icon resources; {checks} bolt/keyway; {cirChecks} circlip UI selection transitions; shaft/bore dimensions; conflict masking; invalid input; module state retention. Original bolt/keyway UI selection transitions; pitch hidden; socket head dimensions and unsupported-size clearing; single-input mixed-hole reverse search within +/-3 mm inclusive; signed difference column and nearest-first order; ambiguity and navigation; invalid input; module state retention; normal and minimum window screenshots.\nRuntime: {Environment.Version}\nOS: {Environment.OSVersion}");
+        File.WriteAllText(Path.Combine(folder, "PASS.txt"), $"PASS: numeric H12/H13/H14 and 6H; icon resources; {checks} bolt/keyway; {cirChecks} circlip UI selection transitions; shaft/bore dimensions; shaft40 current GB table values and review notice; note cleanup; invalid input; module state retention. Original bolt/keyway UI selection transitions; pitch hidden; socket head dimensions and unsupported-size clearing; single-input mixed-hole reverse search within +/-3 mm inclusive; signed difference column and nearest-first order; ambiguity and navigation; invalid input; module state retention; normal and minimum window screenshots.\nRuntime: {Environment.Version}\nOS: {Environment.OSVersion}");
     }
     private static void Capture(FrameworkElement element, string path)
     {

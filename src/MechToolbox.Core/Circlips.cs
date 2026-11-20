@@ -20,14 +20,14 @@ public sealed record CirclipSize(CirclipKind Kind, decimal Diameter, decimal Thi
     public string ThicknessText => KeyFormat.Number(Thickness);
     public string FreeDiameterName => Kind == CirclipKind.Shaft ? "自由内径 d₃ · 基本尺寸" : "自由外径 d₃ · 基本尺寸";
     public string FreeDiameterText => $"⌀{KeyFormat.Number(FreeDiameter)}";
-    public string GrooveText => NeedsReview ? "待核对" : $"⌀{KeyFormat.Number(GrooveDiameter)}";
-    public string GrooveDeviation => NeedsReview ? "槽径暂不输出" : $"上 / 下偏差：{GrooveTolerance.Text} mm";
-    public string GrooveLimits => NeedsReview ? ReviewNote : $"槽径极限：{GrooveTolerance.Limits(GrooveDiameter)}";
+    public string GrooveText => $"⌀{KeyFormat.Number(GrooveDiameter)}";
+    public string GrooveDeviation => $"上 / 下偏差：{GrooveTolerance.Text} mm";
+    public string GrooveLimits => $"槽径极限：{GrooveTolerance.Limits(GrooveDiameter)}";
     public string WidthText => $"{KeyFormat.Number(GrooveWidth)} H13";
     public SlotTolerance WidthTolerance => LinearTolerances.Hole(GrooveWidth, "H13");
     public string WidthDeviation => $"上 / 下偏差：{WidthTolerance.Text} mm";
     public string WidthLimits => $"槽宽极限：{WidthTolerance.Limits(GrooveWidth)}";
-    public string DepthText => NeedsReview ? "待核对" : KeyFormat.Number(NominalDepth);
+    public string DepthText => KeyFormat.Number(NominalDepth);
     public string EdgeText => $"≥ {KeyFormat.Number(EdgeMin)}";
     public string RadiusText => $"≤ {KeyFormat.Number(Thickness * .1m)} mm";
     public string SourceText => $"{Standard} 表 1 · 正文第 {SourcePage} 页 · 标准型 A 型";
@@ -70,14 +70,15 @@ public sealed class CirclipModule(CirclipDataset data) : IStandardDataModule
     public ModuleDescriptor Descriptor { get; } = new("circlips", "卡簧与卡簧槽", "轴用与孔用弹性挡圈 · 标准型 A 型");
     public CirclipDataset Data { get; } = data;
     public IReadOnlyList<StandardSource> Sources => [..Data.Sources, LinearTolerances.Source];
-    public string DataSummary => $"{Data.Title}\n数据版本 {Data.DataVersion} · 核对日期 {Data.UpdatedOn}\n轴用 {Sizes(CirclipKind.Shaft).Count} 档，孔用 {Sizes(CirclipKind.Bore).Count} 档；按各标准表 1 精确匹配公称轴径／孔径，不插值。轴用 40 mm 的原表槽径与槽深矛盾，已屏蔽这两个加工值并提示核对。";
+    public string DataSummary => $"{Data.Title}\n数据版本 {Data.DataVersion} · 核对日期 {Data.UpdatedOn}\n轴用 {Sizes(CirclipKind.Shaft).Count} 档，孔用 {Sizes(CirclipKind.Bore).Count} 档；按各标准表 1 精确匹配公称轴径／孔径，不插值。轴用 40 mm 按现行国标原表显示槽径 37.0 mm、表列槽深 1.25 mm，并单独提示两者的尺寸关系不一致；不使用厂家数据改写国标值。";
     public IReadOnlyList<CirclipSize> Sizes(CirclipKind kind) => Data.Sizes.Where(x => x.Kind == kind).ToArray();
     public CirclipSize Query(CirclipKind kind, decimal diameter) => Data.Sizes.SingleOrDefault(x => x.Kind == kind && x.Diameter == diameter)
         ?? throw new ArgumentOutOfRangeException(nameof(diameter), "未收录该公称规格。");
     public string Summary(CirclipSize x) => $"{x.TypeName} · 标准型 A 型 · 单位 mm\n{x.Designation}\n公称轴径／孔径 d₁：{x.DiameterText}\n" +
         $"卡簧厚度 s（基本尺寸）：{x.ThicknessText}\n{x.FreeDiameterName}：{x.FreeDiameterText}\n" +
         $"槽径 d₂：{x.GrooveText}；{x.GrooveDeviation}\n{x.GrooveLimits}\n槽宽 m：{x.WidthText}；{x.WidthDeviation}\n{x.WidthLimits}\n" +
-        $"名义槽深 t：{x.DepthText}\n最小端部边距 n：{x.EdgeText}\n受载边槽底圆角 r：{x.RadiusText}\n" +
+        $"表列名义槽深 t：{x.DepthText}\n最小端部边距 n：{x.EdgeText}\n受载边槽底圆角 r：{x.RadiusText}\n" +
+        (x.NeedsReview ? $"国标原表核对提示：{x.ReviewNote}\n" : "") +
         $"{x.SourceText}；第 6.3 条圆角要求；槽宽偏差按 ISO 286-2:2010 表 1\n边距须结合载荷与材料复核，本页不计算承载力或极限转速。\n数据版本：{Data.DataVersion}";
 }
 

@@ -12,7 +12,7 @@ public sealed class CirclipDiagram : FrameworkElement
         base.OnRender(dc);
         if (Result is not { } s || ActualWidth < 100 || ActualHeight < 100) return;
         void Text(string text,double x,double y) => dc.DrawText(new FormattedText(text,CultureInfo.InvariantCulture,FlowDirection.LeftToRight,new Typeface("Segoe UI"),13,Brushes.DarkSlateGray,VisualTreeHelper.GetDpi(this).PixelsPerDip),new Point(x,y));
-        if (s.NeedsReview) { Text("此规格槽径、槽深待核对，暂不绘制沟槽。",8,60); return; }
+        if (s.NeedsReview) { Text("本行原表尺寸关系待核对，沟槽示意暂不绘制。",8,60); return; }
         double w=ActualWidth, left=20, end=w-55, gx=end-90, gw=28, top=55, bottom=120, depth=18;
         var pen=new Pen(Brushes.SlateGray,1.4); var body=new SolidColorBrush(Color.FromRgb(222,232,237));
         var ring=new SolidColorBrush(Color.FromRgb(20,125,118));

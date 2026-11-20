@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "dataVersion": "2026.11.16.1",
-  "updatedOn": "2026-11-16",
+  "dataVersion": "2026.11.20.1",
+  "updatedOn": "2026-11-20",
   "title": "轴用与孔用弹性挡圈 · 标准型 A 型",
   "sources": [
     {
       "id": "gb894",
       "title": "GB/T 894-2017 · 轴用弹性挡圈",
-      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D817CED3A7E05397BE0A0AB82A",
-      "scope": "标准型 A 型，表 1 正文第 3～8 页；槽宽 H13，边距为表列最小值。轴用 40 mm 原表槽径与槽深矛盾，已标注待核对并屏蔽加工值。"
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=E059CDBC519BE5EDDD4C5A122F76F15B",
+      "scope": "现行标准型 A 型，表 1 正文第 3～8 页；2026-11-20 核对官方全文公开系统。轴用 40 mm 原表槽径 37.0 mm、槽深 1.25 mm 同时显示，并注明尺寸关系不一致；不以厂家值替代。槽宽 H13，边距为表列最小值。"
     },
     {
       "id": "gb893",
@@ -528,7 +528,7 @@
         "upper": 0
       },
       "sourcePage": 4,
-      "reviewNote": "原表槽径 37.0 与表列槽深 1.25 不一致，槽径和槽深暂不作为加工值输出，请向挡圈制造商核对。"
+      "reviewNote": "现行 GB/T 894-2017 国标原表列槽径 37.0 mm、槽深 1.25 mm；按轴径与槽径基本尺寸计算的径向深度为 1.5 mm，两者不一致。本页保留国标原值，加工前须核实该行尺寸。"
     },
     {
       "kind": "shaft",

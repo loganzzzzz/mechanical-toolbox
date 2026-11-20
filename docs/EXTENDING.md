@@ -78,7 +78,7 @@ CSV 必须使用固定小数点、明确的 mm 单位及来源、版本字段；
 
 `CirclipModule` / `JsonCirclipDataProvider` / `CirclipViewModel` 和桌面 `CirclipQueryView` 使用独立 `circlips-gb.v1.json`。当前只收录标准型 A 型，复合键为 `(kind, diameter)`；类型为 shaft 或 bore，按标准公称规格精确匹配，未列规格不插值。源值用 decimal，槽径偏差使用 SlotTolerance；m 的公差带固定 H13，数值通过 `LinearTolerances.Hole(grooveWidth,"H13")` 展开。厚度和自由状态直径明确为基本尺寸，不给出未录入的制造偏差。
 
-槽深 t 单独保留原表值，并与 |d1-d2|/2 校验。轴用 40 mm 为已识别原表矛盾，reviewNote 必须保留，界面、复制和示意图必须屏蔽槽径及槽深加工值；不得将无说明的数值用于加工推荐。受载边槽底圆角按第 6.3 条 r≤0.1s 计算；n 为表列最小边距，仍须按载荷及材料复核。
+槽深 t 单独保留原表值，并与 |d1-d2|/2 校验。轴用 40 mm 为已识别原表矛盾，reviewNote 必须保留；界面与复制须完整显示国标原表槽径 37.0 mm、表列槽深 1.25 mm 及偏差和极限，同时以单独提示明确两者尺寸关系不一致。不得静默采用厂家数值改写国标值，示意图仍暂停绘制。受载边槽底圆角按第 6.3 条 r≤0.1s 计算；n 为表列最小边距，仍须按载荷及材料复核。
 
 增加 B 型等系列时须扩展复合键并清楚区分，禁止混入 A 型同直径记录。核对基准为 approved-circlips.csv，测试中不得从 JSON 自动生成；保持来源正文页码。
 
