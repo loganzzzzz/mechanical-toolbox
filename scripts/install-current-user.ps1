@@ -11,6 +11,9 @@ foreach ($process in @(Get-Process MechToolbox -ErrorAction SilentlyContinue)) {
 }
 New-Item $installFolder -ItemType Directory -Force | Out-Null
 Copy-Item (Join-Path $sourceFolder '*') $installFolder -Recurse -Force
+# v0.4.0 migrates to manual-section schema v2; retire the unused empirical range file.
+$legacyKeyways = Join-Path $installFolder 'data/parallel-keyways-gb.v1.json'
+if (Test-Path $legacyKeyways) { Remove-Item $legacyKeyways -Force }
 foreach ($sourceFile in Get-ChildItem $sourceFolder -Recurse -File) {
     $relative = $sourceFile.FullName.Substring($sourceFolder.Length).TrimStart([char]92,[char]47)
     $installedFile = Join-Path $installFolder $relative
@@ -24,5 +27,5 @@ $shortcut.WorkingDirectory = $installFolder
 $shortcut.IconLocation = (Join-Path $installFolder 'Assets/toolbox.ico') + ',0'
 $shortcut.Description = '机设工具箱 · 螺栓、键槽、卡簧标准查询'
 $shortcut.Save()
-Write-Output 'INSTALL_OK: v0.3.2; all copied files verified; shortcut icon updated; no backup created.'
+Write-Output 'INSTALL_OK: v0.4.0; all copied files verified; shortcut icon updated; no backup created.'
 Start-Process $exe

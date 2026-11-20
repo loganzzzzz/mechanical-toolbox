@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "dataVersion": "2026.10.15.1",
-  "updatedOn": "2026-10-15",
+  "dataVersion": "2026.11.20.2",
+  "updatedOn": "2026-11-20",
   "title": "公制普通粗牙 · 常用规格 M1.6—M36",
   "threadSeries": "metric-coarse",
-  "clearanceSourceId": "iso273",
-  "tapSourceId": "guhring",
+  "clearanceSourceId": "gb5277",
+  "tapSourceId": "gb20330",
   "sources": [
     {
-      "id": "iso273",
-      "title": "ISO 273:1979",
-      "url": "https://www.iso.org/standard/4183.html",
-      "scope": "通孔精、中、粗三个系列的公称孔径，按标准第 2 页尺寸表核对。H12 / H13 / H14 为标准给出的参考公差带，数值偏差按 ISO 286-2:2010 表 1 以实际孔径分档，参考选用需按图样另行确定。"
+      "id": "gb5277",
+      "title": "GB/T 5277-1985 · 紧固件 螺栓和螺钉通孔",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=7C6B6039F8E5FB5FD8F318E06BAFB0B5",
+      "scope": "2026-11-20 官方题录确认为现行；第 1 章尺寸表的精、中等、粗装配三系列，已核对全部 23 档。第 2 章规定无特殊要求时分别采用 H12 / H13 / H14，数值偏差按现行 GB/T 1800.2-2020，以实际通孔直径分档。"
     },
     {
-      "id": "guhring",
-      "title": "Gühring · Metric Tap Drill Sizes",
-      "url": "https://guhring.com/media/support/Tapping-Tap-Drill-Sizes-Metric.pdf",
-      "scope": "M3—M36 的螺距和常用切削底孔，参考第 234—237 页中的公制攻丝表选取常用钻径。表中存在多个可用钻径，本数据集为工艺推荐选值，非强制尺寸；M8 选 6.8，M12 选 10.2。"
+      "id": "gb20330",
+      "title": "GB/T 20330-2006 · 攻丝前钻孔用麻花钻直径",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=10ABDA7976EA7385730875B03DF6EDBF",
+      "scope": "2026-11-20 官方题录确认为现行，2023-12-28 复审继续有效；表 1 正文第 1～2 页，全部 23 档公制粗牙麻花钻直径，适用于正常旋合长度的切削攻丝前钻孔。不以大径减螺距公式代替表值；M8 为 6.8、M12 为 10.2 mm。"
     },
     {
-      "id": "guhring815",
-      "title": "Gühring · Series 815",
-      "url": "https://guhring.com/media/tools/815.pdf",
-      "scope": "M1.6、M1.8、M2、M2.5 的公制粗牙螺距与底孔范围，分别选用常用底孔 1.25、1.45、1.6、2.05 mm。其余收录螺距也与该资料的适用规格交叉核对。"
+      "id": "gb193",
+      "title": "GB/T 193-2003 · 普通螺纹 直径与螺距系列",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D79C26D3A7E05397BE0A0AB82A",
+      "scope": "2026-11-20 官方题录确认为现行，2026-10-09 复审继续有效；只收录公制粗牙系列，内部保留螺距用于精确查表，界面与复制结果省略螺距。"
     }
   ],
   "sizes": [
@@ -33,8 +33,7 @@
       "tapDrill": 1.25,
       "fine": 1.7,
       "medium": 1.8,
-      "coarse": 2,
-      "tapSourceId": "guhring815"
+      "coarse": 2
     },
     {
       "diameter": 1.8,
@@ -42,8 +41,7 @@
       "tapDrill": 1.45,
       "fine": 2,
       "medium": 2.1,
-      "coarse": 2.2,
-      "tapSourceId": "guhring815"
+      "coarse": 2.2
     },
     {
       "diameter": 2,
@@ -51,8 +49,7 @@
       "tapDrill": 1.6,
       "fine": 2.2,
       "medium": 2.4,
-      "coarse": 2.6,
-      "tapSourceId": "guhring815"
+      "coarse": 2.6
     },
     {
       "diameter": 2.5,
@@ -60,8 +57,7 @@
       "tapDrill": 2.05,
       "fine": 2.7,
       "medium": 2.9,
-      "coarse": 3.1,
-      "tapSourceId": "guhring815"
+      "coarse": 3.1
     },
     {
       "diameter": 3,

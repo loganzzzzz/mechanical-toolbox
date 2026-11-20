@@ -70,7 +70,7 @@ public sealed class CirclipModule(CirclipDataset data) : IStandardDataModule
     public ModuleDescriptor Descriptor { get; } = new("circlips", "卡簧与卡簧槽", "轴用与孔用弹性挡圈 · 标准型 A 型");
     public CirclipDataset Data { get; } = data;
     public IReadOnlyList<StandardSource> Sources => [..Data.Sources, LinearTolerances.Source];
-    public string DataSummary => $"{Data.Title}\n数据版本 {Data.DataVersion} · 核对日期 {Data.UpdatedOn}\n轴用 {Sizes(CirclipKind.Shaft).Count} 档，孔用 {Sizes(CirclipKind.Bore).Count} 档；按各标准表 1 精确匹配公称轴径／孔径，不插值。轴用 40 mm 按现行国标原表显示槽径 37.0 mm、表列槽深 1.25 mm，并单独提示两者的尺寸关系不一致；不使用厂家数据改写国标值。";
+    public string DataSummary => $"{Data.Title}\n数据版本 {Data.DataVersion} · 核对日期 {Data.UpdatedOn}\n轴用 {Sizes(CirclipKind.Shaft).Count} 档，孔用 {Sizes(CirclipKind.Bore).Count} 档；尺寸均按现行 GB/T 894-2017／GB/T 893-2017 原表，槽宽数值偏差按 GB/T 1800.2-2020。按各标准表 1 精确匹配公称轴径／孔径，不插值。轴用 40 mm 按现行国标原表显示槽径 37.0 mm、表列槽深 1.25 mm，并单独提示两者的尺寸关系不一致；不使用厂家数据改写国标值。";
     public IReadOnlyList<CirclipSize> Sizes(CirclipKind kind) => Data.Sizes.Where(x => x.Kind == kind).ToArray();
     public CirclipSize Query(CirclipKind kind, decimal diameter) => Data.Sizes.SingleOrDefault(x => x.Kind == kind && x.Diameter == diameter)
         ?? throw new ArgumentOutOfRangeException(nameof(diameter), "未收录该公称规格。");
@@ -79,7 +79,7 @@ public sealed class CirclipModule(CirclipDataset data) : IStandardDataModule
         $"槽径 d₂：{x.GrooveText}；{x.GrooveDeviation}\n{x.GrooveLimits}\n槽宽 m：{x.WidthText}；{x.WidthDeviation}\n{x.WidthLimits}\n" +
         $"表列名义槽深 t：{x.DepthText}\n最小端部边距 n：{x.EdgeText}\n受载边槽底圆角 r：{x.RadiusText}\n" +
         (x.NeedsReview ? $"国标原表核对提示：{x.ReviewNote}\n" : "") +
-        $"{x.SourceText}；第 6.3 条圆角要求；槽宽偏差按 ISO 286-2:2010 表 1\n边距须结合载荷与材料复核，本页不计算承载力或极限转速。\n数据版本：{Data.DataVersion}";
+        $"{x.SourceText}；第 6.3 条圆角要求；槽宽偏差按 GB/T 1800.2-2020 表 1、表 6\n边距须结合载荷与材料复核，本页不计算承载力或极限转速。\n数据版本：{Data.DataVersion}";
 }
 
 public sealed class CirclipViewModel : INotifyPropertyChanged

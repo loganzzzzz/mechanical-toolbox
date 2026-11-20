@@ -54,7 +54,7 @@
                 <StackPanel Grid.Column="1" VerticalAlignment="Center"><TextBlock Text="{Binding SelectionTitle}" FontSize="17" FontWeight="SemiBold"/><TextBlock Text="{Binding SelectedClearance.UseCase}" TextWrapping="Wrap" Style="{StaticResource Caption}" Margin="0,10,0,8" LineHeight="20"/><TextBlock Text="{Binding ToleranceText}" Style="{StaticResource Caption}"/><TextBlock Text="俯视示意：浅色为间隙，深色为螺栓公称截面。" Style="{StaticResource Caption}" Margin="0,10,0,0"/></StackPanel>
               </Grid>
             </Border>
-            <TextBlock Text="底孔为工艺推荐值，需结合刀具和材料确认。H12 / H13 / H14 是 ISO 273 提供的参考孔公差带；间隙系列不代表定位精度。" Style="{StaticResource Caption}" LineHeight="20" Margin="0,16,0,0"/>
+            <TextBlock Text="底孔按 GB/T 20330-2006 表 1；适用于正常旋合长度的切削攻丝。通孔按 GB/T 5277-1985，无特殊要求时采用 H12 / H13 / H14，数值偏差按 GB/T 1800.2-2020；间隙系列不代表定位精度。" Style="{StaticResource Caption}" LineHeight="20" Margin="0,16,0,0"/>
             <TextBlock Text="{Binding SourceText}" Style="{StaticResource Caption}" FontSize="11" Margin="0,8,0,0"/>
           </StackPanel>
         </Grid>

@@ -14,10 +14,6 @@ public partial class KeywayQueryView : UserControl
         vm = new KeywayViewModel(module); this.status = status;
         InitializeComponent(); DataContext = vm;
     }
-    private void QuickSelect(object sender, RoutedEventArgs e)
-    {
-        if (sender is Button { Tag: string value }) vm.DiameterText = value;
-    }
     private void CopyResult(object sender, RoutedEventArgs e)
     {
         if (vm.Result is not { } result) return;
@@ -27,7 +23,7 @@ public partial class KeywayQueryView : UserControl
     private void TableDoubleClick(object sender, MouseButtonEventArgs e)
     {
         if (e.OriginalSource is not DependencyObject origin || ItemsControl.ContainerFromElement(SizeTable, origin) is not DataGridRow { Item: KeywaySize size }) return;
-        vm.DiameterText = KeyFormat.Number(size.ShaftMax);
+        vm.SelectedSize = size;
         ((TabControl)Content).SelectedIndex = 0;
     }
 }

@@ -7,7 +7,7 @@ internal static class NewModuleChecks
     public static void Run(BoltModule bolts, Action<bool, string> check, Action<Action, string> reject)
     {
         var provider = new JsonKeywayDataProvider();
-        var json = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "data", "parallel-keyways-gb.v1.json"));
+        var json = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "data", "parallel-keyways-gb.v2.json"));
         var data = provider.Parse(json);
         var keys = new KeywayModule(data);
         var approved = File.ReadAllLines(Path.Combine(AppContext.BaseDirectory, "approved-keyways.csv")).Skip(1)
@@ -15,40 +15,39 @@ internal static class NewModuleChecks
         check(data.Sizes.Count == approved.Length, "complete keyway dataset");
         foreach (var a in approved)
         {
-            var s = keys.Query(a[1], KeywayFit.Normal).Size;
-            decimal[] actual = [s.ShaftMin, s.ShaftMax, s.Width, s.Height, s.ShaftDepth, s.HubDepth, s.DepthUpper,
+            var s = keys.Query(1000, a[0], KeywayFit.Normal).Size;
+            decimal[] actual = [s.Width, s.Height, s.ShaftDepth, s.HubDepth, s.DepthUpper,
                 s.RadiusMin, s.RadiusMax, s.N9.Lower, s.N9.Upper, s.Js9.Upper, s.P9.Lower, s.P9.Upper, s.H9.Upper, s.D10.Lower, s.D10.Upper];
-            check(actual.SequenceEqual(a), $"keyway original-table values {s.Section}");
+            check(actual.SequenceEqual(a), $"keyway GB original-table values {s.Section}");
             foreach (var fit in KeywayModule.Fits)
             {
-                var r = keys.Query((a[0] + a[1]) / 2, fit.Fit);
-                check(r.Size.Width == a[2] && r.ShaftInspection == r.ShaftDiameter - a[4] && r.HubInspection == r.ShaftDiameter + a[5], "keyway dimension chain");
+                var r = keys.Query(1000, s.Width, fit.Fit);
+                check(r.Size == s && r.ShaftInspection == 1000 - s.ShaftDepth && r.HubInspection == 1000 + s.HubDepth, "manual section and calculated inspection dimensions");
                 var tol = fit.Fit switch { KeywayFit.Normal => (s.N9, s.Js9), KeywayFit.Tight => (s.P9, s.P9), _ => (s.H9, s.D10) };
                 check(r.ShaftWidthTolerance == tol.Item1 && r.HubWidthTolerance == tol.Item2, "shaft/hub fit selection");
             }
-            check(keys.Query(a[0] + .001m, KeywayFit.Normal).Size == s, "keyway lower boundary just above");
-            if (a[0] > 6) check(keys.Query(a[0], KeywayFit.Normal).Size.Width < s.Width, "exact boundary belongs to preceding row");
         }
-        check(keys.Query(6, KeywayFit.Normal).Size.Width == 2 && keys.Query(500, KeywayFit.Normal).Size.Width == 100, "keyway end boundaries inclusive");
-        check(keys.Query(12, KeywayFit.Normal).Size.RadiusMax == .16m, "b4 radius follows original standard");
-        check(keys.Query(500, KeywayFit.Normal).Size.HubDepth == 19.5m, "b100 hub depth follows original standard over handbook typo");
-        var r50 = keys.Query(50, KeywayFit.Normal);
+        check(keys.Query(12,4,KeywayFit.Normal).Size.RadiusMax == .16m, "b4 radius follows original standard");
+        check(keys.Query(500,100,KeywayFit.Normal).Size.HubDepth == 19.5m, "b100 hub depth from GB original");
+        var r50 = keys.Query(50,14,KeywayFit.Normal);
         check(r50.ShaftInspection == 44.5m && r50.HubInspection == 53.8m, "50mm inspection dimensions");
         check(r50.ShaftInspectionDeviation.Contains("0 / -0.2") && r50.HubInspectionDeviation.Contains("+0.2 / 0"), "shaft inspection tolerance reverses sign");
-        check(keys.Query(8, KeywayFit.Normal).HubWidthTolerance.Text == "+0.0125 / -0.0125", "JS9 four decimals retained");
-        check(keys.Summary(r50).Contains("轴径选键属于设计推荐") && keys.Summary(r50).Contains("GB/T 1095-2003"), "keyway copy includes source and selection scope");
-        foreach (decimal d in new[] { 0m, 5.999m, 500.001m }) reject(() => keys.Query(d, KeywayFit.Normal), "unsupported keyway diameter");
-        reject(() => keys.Query(30, (KeywayFit)99), "unknown fit");
+        check(keys.Query(8,2,KeywayFit.Normal).HubWidthTolerance.Text == "+0.0125 / -0.0125", "JS9 four decimals retained");
+        check(keys.Summary(r50).Contains("手动选择键截面") && keys.Summary(r50).Contains("GB/T 1095-2003") && !keys.Summary(r50).Contains("推荐来源"), "copy contains GB source and manual selection scope");
+        foreach (decimal d in new[] { 0m, -1m, 4m }) reject(() => keys.Query(d,8,KeywayFit.Normal), "invalid inspection shaft diameter");
+        foreach (decimal width in new[] { 0m, 7m, 101m }) reject(() => keys.Query(1000,width,KeywayFit.Normal), "unknown section never interpolated");
+        reject(() => keys.Query(30,8,(KeywayFit)99), "unknown fit");
+        check(keys.Query(29.999m,8,KeywayFit.Normal).Size == keys.Query(1000,8,KeywayFit.Normal).Size, "shaft diameter never determines section");
         void Bad(Action<JsonObject> mutate, string name)
         {
             var node = JsonNode.Parse(json)!.AsObject(); mutate(node);
             reject(() => provider.Parse(node.ToJsonString()), name);
         }
-        Bad(n => n["schemaVersion"] = 2, "future keyway schema");
+        Bad(n => n["schemaVersion"] = 1, "legacy shaft-selection schema rejected");
         Bad(n => n["sizes"] = null, "null keyway sizes");
         Bad(n => n["sizes"]![0] = null, "null keyway row");
-        Bad(n => n["sizes"]![1]!["shaftMin"] = 7, "overlapping shaft ranges");
-        Bad(n => n["sizes"]![1]!["shaftMin"] = 9, "gap in shaft ranges");
+        Bad(n => n["sizes"]![1]!["width"] = 2, "duplicate section width");
+        Bad(n => n["sizes"]![0]!["shaftMin"] = 6, "legacy empirical shaft range rejected");
         Bad(n => n["sizes"]![0]!["shaftDepth"] = 0, "zero keyway depth");
         Bad(n => n["sizes"]![0]!["js9"] = null, "null tolerance");
         Bad(n => n["sizes"]![0]!["js9"]!["lower"] = .01, "non symmetric JS9");
@@ -56,15 +55,19 @@ internal static class NewModuleChecks
         Bad(n => n["sizeSourceId"] = "missing", "missing keyway source");
         Bad(n => n["extra"] = 1, "unknown keyway field");
         var vm = new KeywayViewModel(keys);
-        foreach (var input in new[] { "", "wrong", "0", "501", "30,5", "30.0001", "1e2" })
+        foreach (var input in new[] { "", "wrong", "0", "-1", "30,5", "30.0001", "1e2" })
         {
             vm.DiameterText = "50"; vm.DiameterText = input;
             check(!vm.HasResult && vm.Result is null && vm.Error.Length > 0, "invalid keyway input hides stale results");
         }
-        vm.SelectedFit = KeywayModule.Fits[2];
-        check(vm.Result is null, "fit change while invalid cannot resurrect stale result");
+        vm.SelectedFit = KeywayModule.Fits[2]; vm.SelectedSize=vm.Sizes.Single(x=>x.Width==14);
+        check(vm.Result is null, "selection changes while invalid cannot resurrect stale result");
         vm.DiameterText = "50.125";
-        check(vm.Result is { ShaftDiameter: 50.125m, Fit.Fit: KeywayFit.Loose }, "decimal shaft input with retained fit");
+        check(vm.Result is { ShaftDiameter: 50.125m, Size.Width:14, Fit.Fit: KeywayFit.Loose }, "decimal shaft input retains manual section and fit");
+        vm.DiameterText="80";
+        check(vm.Result?.Size.Width==14,"shaft diameter change does not auto-select another key");
+        vm.SelectedSize=vm.Sizes.Single(x=>x.Width==10);
+        check(vm.Result?.Size.Width==10 && vm.Result.ShaftDiameter==80,"section change does not overwrite shaft input");
 
         // Every supported forward diameter must be discoverable by the corresponding reverse query.
         foreach (var s in bolts.Data.Sizes)

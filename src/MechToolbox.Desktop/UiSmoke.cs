@@ -98,10 +98,11 @@ internal static class UiSmoke
         var keyView = Children<KeywayQueryView>(window).Single();
         var keyVm = (KeywayViewModel)keyView.DataContext;
         var diameterInput = Children<TextBox>(keyView).Single();
-        var fitList = Children<ComboBox>(keyView).Single();
+        var fitList = Children<ComboBox>(keyView).Single(x => System.Windows.Automation.AutomationProperties.GetName(x) == "键槽联结类型");
+        var sectionList = Children<ComboBox>(keyView).Single(x => System.Windows.Automation.AutomationProperties.GetName(x) == "国标键截面");
         foreach (var row in keyVm.Sizes)
         {
-            diameterInput.SetCurrentValue(TextBox.TextProperty, KeyFormat.Number(row.ShaftMax)); Flush(window);
+            diameterInput.SetCurrentValue(TextBox.TextProperty, "1000"); sectionList.SelectedItem = row; Flush(window);
             foreach (var fit in keyVm.Fits)
             {
                 fitList.SelectedItem = fit; Flush(window);
@@ -112,7 +113,10 @@ internal static class UiSmoke
         }
         diameterInput.SetCurrentValue(TextBox.TextProperty, ""); Flush(window);
         if (keyVm.Result is not null) throw new Exception("清空轴径后残留键槽结果。");
-        diameterInput.SetCurrentValue(TextBox.TextProperty, "50"); fitList.SelectedIndex = 0; Flush(window);
+        diameterInput.SetCurrentValue(TextBox.TextProperty, "50"); sectionList.SelectedItem = keyVm.Sizes.Single(x=>x.Width==14); fitList.SelectedIndex = 0; Flush(window);
+        diameterInput.SetCurrentValue(TextBox.TextProperty, "80"); Flush(window);
+        if(keyVm.Result?.Size.Width!=14) throw new Exception("输入轴径意外改变手选截面。");
+        diameterInput.SetCurrentValue(TextBox.TextProperty, "50"); Flush(window);
         Capture(window, Path.Combine(folder, "keyways-1200.png"));
         window.Width = window.MinWidth; window.Height = window.MinHeight; Flush(window);
         Capture(window, Path.Combine(folder, "keyways-minimum.png"));
@@ -168,7 +172,7 @@ internal static class UiSmoke
         kindCombo.SelectedItem=CirclipViewModel.Kinds[1]; diameterCombo.SetCurrentValue(ComboBox.TextProperty,"30"); Flush(window);
         window.ModuleList.SelectedIndex=0; Flush(window); window.ModuleList.SelectedIndex=2; Flush(window);
         if(!ReferenceEquals(Children<CirclipQueryView>(window).Single(),cirView) || cirVm.Result?.Kind!=CirclipKind.Bore || cirVm.Result.Diameter!=30) throw new Exception("卡簧模块状态未保留。");
-        File.WriteAllText(Path.Combine(folder, "PASS.txt"), $"PASS: numeric H12/H13/H14 and 6H; icon resources; {checks} bolt/keyway; {cirChecks} circlip UI selection transitions; shaft/bore dimensions; shaft40 current GB table values and review notice; note cleanup; invalid input; module state retention. Original bolt/keyway UI selection transitions; pitch hidden; socket head dimensions and unsupported-size clearing; single-input mixed-hole reverse search within +/-3 mm inclusive; signed difference column and nearest-first order; ambiguity and navigation; invalid input; module state retention; normal and minimum window screenshots.\nRuntime: {Environment.Version}\nOS: {Environment.OSVersion}");
+        File.WriteAllText(Path.Combine(folder, "PASS.txt"), $"PASS: GB-only sources; manual national-standard keyway sections; numeric H12/H13/H14 and 6H; icon resources; {checks} bolt/keyway; {cirChecks} circlip UI selection transitions; shaft/bore dimensions; shaft40 current GB table values and review notice; note cleanup; invalid input; module state retention. Original bolt/keyway UI selection transitions; pitch hidden; socket head dimensions and unsupported-size clearing; single-input mixed-hole reverse search within +/-3 mm inclusive; signed difference column and nearest-first order; ambiguity and navigation; invalid input; module state retention; normal and minimum window screenshots.\nRuntime: {Environment.Version}\nOS: {Environment.OSVersion}");
     }
     private static void Capture(FrameworkElement element, string path)
     {

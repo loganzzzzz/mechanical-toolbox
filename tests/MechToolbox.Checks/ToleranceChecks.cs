@@ -5,7 +5,7 @@ internal static class ToleranceChecks
 {
     public static void Run(BoltModule bolts, Action<bool,string> check, Action<Action,string> reject)
     {
-        // Independently transcribed ISO 286 table 1 rows; boundary ownership must never be rounded.
+        // Independently transcribed GB/T 1800.2-2020 tables 1 and 6 rows; boundary ownership must never be rounded.
         (decimal max, decimal h12, decimal h13, decimal h14)[] approved =
         [(3,.1m,.14m,.25m),(6,.12m,.18m,.30m),(10,.15m,.22m,.36m),(18,.18m,.27m,.43m),(30,.21m,.33m,.52m),(50,.25m,.39m,.62m)];
         decimal previous=0;
@@ -13,11 +13,13 @@ internal static class ToleranceChecks
         {
             foreach(var (band,value) in new[]{("H12",row.h12),("H13",row.h13),("H14",row.h14)})
             {
-                check(LinearTolerances.Hole(previous+.0001m,band)==new SlotTolerance(0,value),"linear tolerance lower boundary excluded");
+                check(LinearTolerances.Hole((band=="H14" && previous==0 ? 1m : previous)+.0001m,band)==new SlotTolerance(0,value),"linear tolerance lower boundary excluded");
                 check(LinearTolerances.Hole(row.max,band)==new SlotTolerance(0,value),"linear tolerance upper boundary included");
             }
             previous=row.max;
         }
+        reject(()=>LinearTolerances.Hole(1,"H14"),"H14 table 6 footnote excludes basic size at or below 1 mm");
+        reject(()=>LinearTolerances.Hole(.5m,"H14"),"H14 not extrapolated to small size");
         reject(()=>LinearTolerances.Hole(0,"H13"),"zero basic size");
         reject(()=>LinearTolerances.Hole(50.001m,"H13"),"unsupported size not extrapolated");
         reject(()=>LinearTolerances.Hole(3,"h13"),"shaft band not treated as hole band");
@@ -42,10 +44,10 @@ internal static class ToleranceChecks
             var expected=s.GrooveWidth<=3 ? .14m : .18m;
             check(s.WidthTolerance==new SlotTolerance(0,expected) && cir.Summary(s).Contains(s.WidthLimits),"circlip width basic-size group and copy");
         }
-        var keys=new KeywayModule(new JsonKeywayDataProvider().Load(Path.Combine(AppContext.BaseDirectory,"data","parallel-keyways-gb.v1.json")));
+        var keys=new KeywayModule(new JsonKeywayDataProvider().Load(Path.Combine(AppContext.BaseDirectory,"data","parallel-keyways-gb.v2.json")));
         foreach(var size in keys.Data.Sizes)
         {
-            var r=keys.Query(size.ShaftMax,KeywayFit.Normal);
+            var r=keys.Query(1000,size.Width,KeywayFit.Normal);
             check(r.ShaftInspectionLimits.Contains(KeyFormat.Number(r.ShaftInspection-size.DepthUpper)) && r.HubInspectionLimits.Contains(KeyFormat.Number(r.HubInspection+size.DepthUpper)),"keyway opposite inspection deviation directions");
             check(keys.Summary(r).Contains(r.ShaftDepthLimits) && keys.Summary(r).Contains(r.HubDepthLimits),"keyway depth ranges copied");
         }

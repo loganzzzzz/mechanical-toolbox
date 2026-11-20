@@ -39,7 +39,7 @@ Check(module.Find(8).ApproximateDrill == 6.75m && module.Find(8).TapDrill == 6.8
 Check(module.Find(12).TapDrill == 10.2m && module.Find(12).Coarse == 14.5m, "M12 critical values");
 Check(module.Summary(module.Find(8), ClearanceSeries.Coarse).Contains("粗装配 ⌀10"), "copy selected clearance");
 Check(module.Summary(module.Find(6), ClearanceSeries.Fine).Contains("M6-6H"), "coarse thread callout omits pitch");
-Check(module.Summary(module.Find(2), ClearanceSeries.Medium).Contains("Gühring · Series 815"), "small size carries its own drill source");
+Check(module.Summary(module.Find(2), ClearanceSeries.Medium).Contains("GB/T 20330-2006"), "small size uses GB tap-drill source");
 var csv = module.ExportCsv([module.Find(8)]);
 Check(csv.Split('\n', StringSplitOptions.RemoveEmptyEntries).Length == 2 && csv.Contains("\"6.8\",\"8.4\",\"9\",\"10\""), "filtered CSV exports numeric mm");
 foreach (var size in data.Sizes)
@@ -110,6 +110,21 @@ foreach (var bad in new Action<JsonObject>[] {
 NewModuleChecks.Run(module, Check, Reject);
 CirclipChecks.Run(Check, Reject);
 ToleranceChecks.Run(module, Check, Reject);
+var keyModule = new KeywayModule(new JsonKeywayDataProvider().Load(Path.Combine(AppContext.BaseDirectory,"data","parallel-keyways-gb.v2.json")));
+var cirModule = new CirclipModule(new JsonCirclipDataProvider().Load(Path.Combine(AppContext.BaseDirectory,"data","circlips-gb.v1.json")));
+foreach(var standardModule in new IStandardDataModule[]{module,keyModule,cirModule})
+{
+    foreach(var source in standardModule.Sources)
+        Check(source.Title.StartsWith("GB/T ") && new Uri(source.Url).Host is "openstd.samr.gov.cn" or "std.samr.gov.cn", "all active standards use official national standard sources");
+}
+foreach(var size in data.Sizes)
+{
+    var text=module.Summary(size,ClearanceSeries.Medium);
+    Check(text.Contains("GB/T 5277-1985") && text.Contains("GB/T 20330-2006") && text.Contains("GB/T 15756-2008") && text.Contains("GB/T 1800.2-2020"),"bolt copy has national-standard provenance throughout");
+    Check(!text.Contains("ISO ") && !text.Contains("Gühring") && !text.Contains("BETEC"),"no supplier or international standard silently returned as GB");
+}
+Check(module.ExportCsv(data.Sizes).Contains("GB/T 20330-2006") && !module.ExportCsv(data.Sizes).Contains("ISO "),"CSV provenance uses national standards");
+Check(cirModule.Data.Sizes.All(x=>cirModule.Summary(x).Contains("GB/T 1800.2-2020") && !cirModule.Summary(x).Contains("ISO ")),"all circlip copies use national-standard groove tolerances");
 Console.WriteLine($"PASS: {count} checks; {approved.Length} bolt sizes; 26 keyway sections; 174 circlip rows; forward/reverse queries and invalid input.");
 
 sealed class StubModule(ModuleDescriptor descriptor) : IStandardModule { public ModuleDescriptor Descriptor => descriptor; }

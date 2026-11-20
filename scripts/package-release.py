@@ -20,13 +20,15 @@ for kind in ("portable", "lite"):
         stream.seek(offset)
         assert stream.read(4) == b"PE\0\0"
         assert struct.unpack("<H", stream.read(2))[0] == 0x8664
-    for name in ("metric-coarse.v1.json", "parallel-keyways-gb.v1.json", "socket-head-gbt70-1.v1.json", "circlips-gb.v1.json"):
-        assert json.loads((stage / "data" / name).read_text())["schemaVersion"] == 1
+    for name in ("metric-coarse.v1.json", "parallel-keyways-gb.v2.json", "socket-head-gbt70-1.v1.json", "circlips-gb.v1.json"):
+        assert json.loads((stage / "data" / name).read_text())["schemaVersion"] == (2 if name == "parallel-keyways-gb.v2.json" else 1)
     (stage / "Assets").mkdir(exist_ok=True)
     shutil.copy2(ROOT / "src/MechToolbox.Desktop/Assets/toolbox.ico", stage / "Assets/toolbox.ico")
     assert (stage / "Assets/toolbox.ico").read_bytes()[:4] == b"\x00\x00\x01\x00"
     (stage / "Install-CurrentUser.ps1").write_text((ROOT / "scripts/install-current-user.ps1").read_text(), encoding="utf-8-sig")
     shutil.copy2(ROOT / "README.md", stage / "README.md")
+    (stage / "docs").mkdir(exist_ok=True)
+    shutil.copy2(ROOT / "docs/NATIONAL-STANDARDS.md", stage / "docs/NATIONAL-STANDARDS.md")
     for name in ("LICENSE", "THIRD_PARTY_NOTICES.md"):
         shutil.copy2(ROOT / name, stage / name)
     if kind == "portable":
@@ -38,8 +40,8 @@ for kind in ("portable", "lite"):
         "螺栓页：仅公制粗牙，省略螺距；增加 GB/T 70.1-2008 内六角圆柱头尺寸。孔径反查只输入一个孔径，自动同时列出 ±3 mm 内的通孔与攻丝底孔，含边界，按差值从小到大排列。\n"
         "v0.3.1：卡簧槽宽与三档通孔公差带展开为数值偏差和允许范围；成品内螺纹 6H 显示中径与小径范围；增加程序图标。\n"
         "卡簧与卡簧槽页：标准型 A 型，轴用与孔用；按公称轴径或孔径查询。轴用 40 mm 按现行国标原表显示槽径 37.0 mm、表列槽深 1.25 mm，尺寸关系存在差异，已明确提示加工前核实。\n"
-        "键与键槽页：输入轴径，查看普通平键截面及轴、毂槽宽和槽深。\n"
-        "键槽截面尺寸按 GB/T 1095-2003 查询，按轴径选键属于常用设计推荐。\n"
+        "键与键槽页：手动选择国标键截面，轴径仅用于计算检验尺寸；移除经验轴径分档。\n"
+        "全部查询尺寸统一采用现行国标。通孔 GB/T 5277-1985、底孔 GB/T 20330-2006、6H 极限 GB/T 15756-2008、线性公差 GB/T 1800.2-2020；核对日期 2026-11-20。\n"
         "源码附带 Windows 自动界面检查入口，验证记录见 README.md。\n",
         encoding="utf-8-sig",
     )

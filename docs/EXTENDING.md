@@ -59,7 +59,7 @@ CSV 必须使用固定小数点、明确的 mm 单位及来源、版本字段；
 
 `KeywayModule`、`JsonKeywayDataProvider`、`KeywayQueryView` 是完整的第二模块示例，使用独立 JSON。实现 `IStandardDataModule` 可让「标准数据与依据」页面自动显示本模块的来源和版本摘要。
 
-`KeywayViewModel` 和 `BoltReverseViewModel` 位于 Core，能在任何操作系统上检查输入与结果更新。输入非法时必须立即清空旧结果。键槽轴径查询区间不含下限、包含上限（首档含 6）；反查孔径可能有多个匹配，禁止只取第一项。槽宽偏差保留四位小数。
+`KeywayViewModel` 和 `BoltReverseViewModel` 位于 Core，能在任何操作系统上检查输入与结果更新。输入非法时必须立即清空旧结果。键槽按手选宽度精确定位国标截面，轴径只用于检验尺寸计算，不按经验区间自动选键；反查孔径可能有多个匹配，禁止只取第一项。槽宽偏差保留四位小数。
 
 螺栓页已移除全规格对照表；Core 的 `ExportCsv` 保留为代码接口，当前没有对应界面入口。新的孔径反查使用已有的螺栓数据，不另存一份反查表，以免后续标准数据更新时正反查询不一致。
 
@@ -83,4 +83,12 @@ CSV 必须使用固定小数点、明确的 mm 单位及来源、版本字段；
 增加 B 型等系列时须扩展复合键并清楚区分，禁止混入 A 型同直径记录。核对基准为 approved-circlips.csv，测试中不得从 JSON 自动生成；保持来源正文页码。
 
 
-`LinearTolerances` 保存已核对的 ISO 286-2:2010 表 1 的 H12／H13／H14 数值，当前基本尺寸范围为 (0,50] mm；不可用公称螺栓直径替代实际通孔直径分档。`MetricThreadLimits` 保存当前 23 档粗牙的成品 6H 中径／小径极限，以 `(Diameter,Pitch)` 精确匹配；未收录组合返回 null，不插值。扩展规格时须同步核对范围、来源和独立复核表。
+`LinearTolerances` 保存已核对的 GB/T 1800.2-2020 表 1、表 6 的 H12／H13／H14 数值，当前基本尺寸范围为 (0,50] mm；不可用公称螺栓直径替代实际通孔直径分档。`MetricThreadLimits` 保存当前 23 档粗牙的成品 6H 中径／小径极限，以 `(Diameter,Pitch)` 精确匹配；未收录组合返回 null，不插值。扩展规格时须同步核对范围、来源和独立复核表。
+
+## v0.4.0 国标来源与键槽结构 v2
+
+当前 `KeywayDataset.SchemaVersion=2`，删除 `shaftSelectionSourceId` 和所有行的 `shaftMin/shaftMax`，只保存 GB/T 1095-2003 表 1 的原值。`KeywayModule.Query(diameter,width,fit)` 按宽度精确查询截面，轴径不改变截面。`SelectedSize` 和 `DiameterText` 独立；双击表格仅修改所选截面。旧 v1 结构及未收录宽度均拒绝，不能静默按轴径选键。
+
+标准来源必须以国家标准全文公开系统或全国标准信息公共服务平台确认为现行，并核对实际原表；不能把厂家资料改名为 GB/T。每次标准迁移须记录题录状态、表号、正文页、差异及核对日期，见 NATIONAL-STANDARDS.md。原表扫描从公开镜像取得时须与官方题录区分，不能声称是官方直接下载。原文不进仓库；测试复核表不得由应用 JSON 自动生成。
+
+`MetricThreadLimits` 的 23 档 6H 均采用 GB/T 15756-2008 表 3；通孔与卡簧槽宽共用 GB/T 1800.2-2020 数值表。不要仅因国际标准更新而假设国标也已更新；标准计划、征求意见稿不能冒充已实施标准。

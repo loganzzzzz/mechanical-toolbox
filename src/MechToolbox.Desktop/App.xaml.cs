@@ -15,7 +15,7 @@ public partial class App : Application
             var registry = new ModuleRegistry();
             var heads = new JsonSocketHeadDataProvider().Load(Path.Combine(AppContext.BaseDirectory, "data", "socket-head-gbt70-1.v1.json"));
             registry.Register(new BoltModule(data, heads));
-            var keyways = new JsonKeywayDataProvider().Load(Path.Combine(AppContext.BaseDirectory, "data", "parallel-keyways-gb.v1.json"));
+            var keyways = new JsonKeywayDataProvider().Load(Path.Combine(AppContext.BaseDirectory, "data", "parallel-keyways-gb.v2.json"));
             registry.Register(new KeywayModule(keyways));
             var circlips = new JsonCirclipDataProvider().Load(Path.Combine(AppContext.BaseDirectory, "data", "circlips-gb.v1.json"));
             registry.Register(new CirclipModule(circlips));

@@ -6,7 +6,7 @@
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <AssemblyName>MechToolbox</AssemblyName>
     <Product>机设工具箱</Product>
-    <Version>0.3.2</Version>
+    <Version>0.4.0</Version>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets/toolbox.ico</ApplicationIcon>
     <DebugType>none</DebugType>

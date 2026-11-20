@@ -12,10 +12,8 @@ public sealed record ThreadLimits(decimal Diameter, decimal Pitch, decimal Pitch
 
 public static class MetricThreadLimits
 {
-    public static StandardSource IsoSource { get; } = new("iso965", "ISO 965-2:2024 · 表 1",
-        "https://www.iso.org/standard/87890.html", "正常旋合长度、6H 成品内螺纹中径与小径极限。M1.6—M16 按表 1 正文第 2 页核对；不将攻丝前推荐钻径套用成品螺纹公差。下偏差为 0，上偏差为表列最大值减最小值，基准为相应基本中径／小径。");
-    public static StandardSource Source { get; } = new("betec-thread", "BETEC · Gewinde: Toleranzen · 表 4",
-        "https://betecnet.de/catalog/docs/BETEC_161.pdf", "M18、M20、M22、M24、M27、M30、M33、M36 的 6H 中径／小径按目录印刷页 151 表 4 核对。目录注明摘自 ISO 965-2 / DIN 13；不使用外螺纹数据。M3—M16 对应行与 ISO 原表交叉核对一致。");
+    public static StandardSource Source { get; } = new("gb15756", "GB/T 15756-2008 · 普通螺纹 极限尺寸",
+        "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=1F4966A89595E56DFDCDD3FE1B0A8E22", "2026-11-20 官方题录确认为现行；表 3 正文第 19～22 页，23 档粗牙 6H 成品内螺纹中径与小径极限均按原表复核。H 下偏差为 0，上偏差为最大值减基本尺寸；不将攻丝前钻径套用成品螺纹公差。");
     private static readonly ThreadLimits[] Rows =
     [
         new(1.6m,.35m,1.373m,1.458m,1.221m,1.321m),

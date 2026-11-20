@@ -116,8 +116,8 @@ public sealed class BoltModule(BoltDataset data, SocketHeadDataset? heads = null
     public BoltDataset Data { get; } = data;
     public SocketHeadDataset? Heads { get; } = heads;
     public SocketHeadSize? HeadFor(BoltSize size) => Heads?.Sizes.SingleOrDefault(x => x.Diameter == size.Diameter);
-    public IReadOnlyList<StandardSource> Sources => Heads is null ? [..Data.Sources, LinearTolerances.Source, MetricThreadLimits.IsoSource, MetricThreadLimits.Source] : [.. Data.Sources, Heads.Source, LinearTolerances.Source, MetricThreadLimits.IsoSource, MetricThreadLimits.Source];
-    public string DataSummary => $"{Data.Title}\n数据版本 {Data.DataVersion} · 核对日期 {Data.UpdatedOn}\n收录 {Data.Sizes.Count} 个规格，{Data.Sizes.First().Spec}—{Data.Sizes.Last().Spec}。通孔按 ISO 273:1979 三个系列提供，底孔采用切削攻丝工艺推荐值。" + (Heads is null ? "" : $"\n内六角圆柱头按 {Heads.Source.Title} 表 1 查询，数据版本 {Heads.DataVersion}，核对日期 {Heads.UpdatedOn}。未列规格不外推。");
+    public IReadOnlyList<StandardSource> Sources => Heads is null ? [..Data.Sources, LinearTolerances.Source, MetricThreadLimits.Source] : [.. Data.Sources, Heads.Source, LinearTolerances.Source, MetricThreadLimits.Source];
+    public string DataSummary => $"{Data.Title}\n数据版本 {Data.DataVersion} · 核对日期 {Data.UpdatedOn}\n收录 {Data.Sizes.Count} 个规格，{Data.Sizes.First().Spec}—{Data.Sizes.Last().Spec}。通孔按现行 GB/T 5277-1985 三个系列提供，切削攻丝前麻花钻直径按现行 GB/T 20330-2006 表 1 查询。" + (Heads is null ? "" : $"\n内六角圆柱头按 {Heads.Source.Title} 表 1 查询，数据版本 {Heads.DataVersion}，核对日期 {Heads.UpdatedOn}。未列规格不外推。");
     public StandardSource TapSource(BoltSize size) => Data.Sources.Single(x => x.Id == (size.TapSourceId ?? Data.TapSourceId));
     public BoltSize Find(decimal diameter) => Data.Sizes.SingleOrDefault(x => x.Diameter == diameter)
         ?? throw new ArgumentOutOfRangeException(nameof(diameter), "未收录此规格，不能外推尺寸。");
@@ -140,7 +140,7 @@ public sealed class BoltModule(BoltDataset data, SocketHeadDataset? heads = null
             $"当前选用：{c.Name} {c.SizeText}；参考公差带需按图样另行确定\n" +
             "底孔适用于切削丝锥；挤压丝锥须按刀具厂商数据。装配系列不等同于定位精度。\n" +
             $"通孔依据：{Data.Sources.Single(x => x.Id == Data.ClearanceSourceId).Title}\n" +
-            $"底孔依据：{TapSource(size).Title}\n线性偏差依据：ISO 286-2:2010 表 1；6H 依据：ISO 965-2:2024 表 1 / BETEC 表 4\n数据版本：{Data.DataVersion}" +
+            $"底孔依据：{TapSource(size).Title}\n线性偏差依据：GB/T 1800.2-2020 表 1、表 6；6H 依据：GB/T 15756-2008 表 3\n数据版本：{Data.DataVersion}" +
             (Heads is null ? "" : $"\n头部数据版本：{Heads.DataVersion}");
     }
     public string ExportCsv(IEnumerable<BoltSize> sizes)

@@ -15,6 +15,8 @@ foreach ($kind in @("portable", "lite")) {
     }
     if ($LASTEXITCODE -ne 0) { throw "Publish failed: $kind" }
     Copy-Item README.md "$folder/README.md"
+    New-Item "$folder/docs" -ItemType Directory -Force | Out-Null
+    Copy-Item docs/NATIONAL-STANDARDS.md "$folder/docs/NATIONAL-STANDARDS.md"
     Copy-Item LICENSE, THIRD_PARTY_NOTICES.md $folder
     if ($kind -eq "portable") {
         New-Item "$folder/licenses" -ItemType Directory -Force | Out-Null
